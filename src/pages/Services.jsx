@@ -6,7 +6,7 @@ import sec2top from '../assets/svg/sec2top.svg';
 
 function Services() {
     return (
-        <div className="">
+        <div style={{marginTop: '85px'}} className="w-full p-4 container m-auto">
             <section id='recruitment-as-services' className=' xl:grid grid-cols-2 pb-8 xl:pb-44 mt-12'>
               
                 <div className='flex md:justify-center align-middle items-center px-4 md:px-12 lg:px-24 relative'>

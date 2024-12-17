@@ -46,7 +46,7 @@ function Home() {
   };
 
   return (
-    <div className="">
+    <div style={{marginTop: '85px'}} className="w-full p-4 container m-auto">
       <section className=' xl:grid grid-cols-2 pb-44 mt-12'>
         <div>
           <div className=' mb-8 mt-0 xl:mb-14 xl:mt-32'>

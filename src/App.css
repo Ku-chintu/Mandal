@@ -11,6 +11,10 @@
     font-size: 45px;
     line-height: 54.46px;
 }
+.heading-3 {
+    font-size: 40px;
+    line-height: 48.11px;
+}
 .title {
     font-size: 25px;
     line-height: 30.26px;
@@ -26,6 +30,36 @@
     line-height: 36.31px;
     font-weight: 300;
 }
+.rounded-icon {
+    height: 35px;
+    width: 35px;
+}
+.contact-banner {
+    background-image: url('./assets/svg/contactBanner.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    /* Add a pseudo-element for dimming the background */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(26, 64, 62, 0.68); /* Background overlay with opacity */
+        z-index: 1; /* Place the overlay below the content */
+    }
+
+    z-index: 2; /* Ensure the text content appears above the pseudo-element */
+}
+
+.contact-banner > div {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 2;
+}
 
 
 
@@ -38,6 +72,10 @@
     .heading-2 {
         font-size: 30px;
         line-height: 40px;
+    }
+    .heading-3 {
+        font-size: 30px;
+        line-height: 38.11px;
     }
     .p-text {
         font-size: 24px;
@@ -53,6 +91,10 @@
     .heading-2 {
         font-size: 24px;
         line-height: 30px;
+    }
+    .heading-3 {
+        font-size: 20px;
+        line-height: 28.11px;
     }
     .p-text {
         font-size: 20px;

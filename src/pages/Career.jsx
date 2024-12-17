@@ -2,7 +2,7 @@ import React from 'react';
 
 function Career() {
   return (
-    <div className="text-center">
+    <div style={{marginTop: '85px'}} className="w-full p-4 container m-auto">
       <h1 className="text-4xl font-bold text-green-600">Welcome to the Career Page</h1>
     </div>
   );

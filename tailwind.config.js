@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         primary: '#2F584D',
         iconBg: '#6A8763',
+        success: '#008515',
       },
     },
   },

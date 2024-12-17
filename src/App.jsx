@@ -15,18 +15,18 @@ function App() {
     <div className=" font-inter text-primary">
       <Header />
       <Router>
-        <div style={{marginTop: '85px'}} className="w-full p-4 container m-auto">
+        {/* <div style={{marginTop: '85px'}} className="w-full p-4 container m-auto"> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/platforms" element={<PlatForms />} />
             <Route path="/career" element={<Career />} />
             <Route path="/pricing" element={<Pricing />} />
             {/* <Route path="/resources" element={<Resources />} /> */}
-            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/contactus" element={<ContactUs />} />
             <Route path="/services" element={<Services />} />
             <Route path="/solution" element={<Solutions />} />
           </Routes>
-        </div>
+        {/* </div> */}
       </Router>
       <Footer />
     </div>

@@ -6,7 +6,7 @@ import Twitter from '../assets/svg/Twitter.svg';
 const Footer = () => {
 
     return (
-        <header className='bg-primary'>
+        <footer className='bg-primary'>
             <div className=' container m-auto '>
                 <div className='flex gap-4 justify-end p-4'>
                     <div className=' bg-iconBg h-12 w-12 rounded-full flex justify-center items-center align-middle'>
@@ -55,7 +55,7 @@ const Footer = () => {
                     <p className=' text-center text-white text-base'>© 2024 mAI. All rights reserved. Privacy Policy | Terms of Service.</p>
                 </div>
             </div>
-        </header>
+        </footer>
     );
 };
 

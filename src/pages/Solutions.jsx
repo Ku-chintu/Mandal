@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import solutionSec1 from '../assets/svg/solutionSec1.svg';
 import solutionSec2 from '../assets/svg/solutionSec2.svg';
 import solutionSec3 from '../assets/svg/solutionSec3.svg';
@@ -7,8 +7,17 @@ import sec2Group from '../assets/svg/sec2Group.svg';
 import sec2top from '../assets/svg/sec2top.svg';
 
 function Services() {
+    useEffect(() => {
+        const hash = window.location.hash;
+        if (hash) {
+            const element = document.querySelector(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, []);
     return (
-        <div className="">
+        <div style={{marginTop: '85px'}} className="w-full p-4 container m-auto">
             <section id='resume-parsing' className=' xl:grid grid-cols-2 pb-8 xl:pb-20 mt-12'>
 
                 <div className='hidden xl:flex md:justify-center align-middle items-center px-4 md:px-12 lg:px-24 relative'>
