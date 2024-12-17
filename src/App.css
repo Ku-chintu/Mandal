@@ -1,0 +1,61 @@
+.btn {
+    font-size: 25px;
+    line-height: 30.26px;
+    padding: 15px 42px;
+}
+.heading-1 {
+    font-size: 70px;
+    line-height: 87.72px;
+}
+.heading-2 {
+    font-size: 45px;
+    line-height: 54.46px;
+}
+.title {
+    font-size: 25px;
+    line-height: 30.26px;
+    color: #FFFFFFCC;
+}
+.subtitle {
+    font-size: 18px;
+    line-height: 21.78px;
+    color: #FFFFFFCC;
+}
+.p-text {
+    font-size: 30px;
+    line-height: 36.31px;
+    font-weight: 300;
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .heading-1 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .heading-2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .p-text {
+        font-size: 24px;
+        line-height: 25px;
+    }
+}
+
+@media (max-width: 640px) {
+    .heading-1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .heading-2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .p-text {
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
