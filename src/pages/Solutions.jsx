@@ -7,6 +7,7 @@ import sec2Group from '../assets/svg/sec2Group.svg';
 import sec2top from '../assets/svg/sec2top.svg';
 
 function Services() {
+    document.title = 'Solutions'
     useEffect(() => {
         const hash = window.location.hash;
         if (hash) {

@@ -10,8 +10,14 @@ import Plusicon from '../assets/svg/Plusicon.svg'; // Adjust the path as needed
 import Section3 from '../assets/svg/section3.svg'; // Adjust the path as needed
 import Section4 from '../assets/svg/section4.svg'; // Adjust the path as needed
 import Section5 from '../assets/svg/section5.svg'; // Adjust the path as needed
+import acord2 from '../assets/svg/acord2.svg'; // Adjust the path as needed
+import acord3 from '../assets/svg/acord3.svg'; // Adjust the path as needed
+import acord4 from '../assets/svg/acord4.svg'; // Adjust the path as needed
+import accord5 from '../assets/svg/accord5.svg'; // Adjust the path as needed
+import acord6 from '../assets/svg/acord6.svg'; // Adjust the path as needed
 
 function Home() {
+  document.title = 'Home'
   const [openIndex, setOpenIndex] = useState(0); // Default to first accordion open
 
   const accordionData = [
@@ -42,6 +48,8 @@ function Home() {
   ];
 
   const handleAccordionClick = (index) => {
+    console.log('check 111111111111111111111111', index);
+    
     setOpenIndex(index);
   };
 
@@ -153,17 +161,14 @@ function Home() {
           <div className="w-full mt-10 border-b border-primary">
             {accordionData.map((item, index) => (
               <div key={index} className="border-t border-primary py-3 overflow-hidden">
-                {/* Accordion Header */}
-                <div className="flex items-center align-middle cursor-pointer">
-                  <img   onClick={() => handleAccordionClick(index)} src={Plusicon} alt="Plusicon" className="w-9 h-9" />
+                <div onClick={() => handleAccordionClick(index)} className="flex items-center align-middle cursor-pointer">
+                  <img src={Plusicon} alt="Plusicon" className="w-9 h-9" />
                   <button
-                    onClick={() => handleAccordionClick(index)}
                     className="w-full text-xl flex px-4 py-2  font-semibold cursor-pointer "
                   >
                     {item.title}
                   </button>
                 </div>
-                {/* Accordion Content */}
                 <div
                   className={`transition-all duration-300 overflow-hidden ${openIndex === index ? "max-h-screen" : "max-h-0"
                     }`}
@@ -178,7 +183,25 @@ function Home() {
         </div>
         <div className='flex md:justify-center align-middle items-center px-4 md:px-12 lg:px-24 relative'>
           <div className=''>
-          <img style={{ width: '100%' }} src={Section5} alt="image1" className=" bg-white pr-4 pb-4 " />
+            {
+              openIndex === 0 ? <img style={{ width: '100%' }} src={Section5} alt="image1" className=" bg-white pr-4 pb-4 " /> : null
+            }
+            {
+              openIndex === 1 ? <img style={{ width: '100%' }} src={acord2} alt="image1" className=" bg-white pr-4 pb-4 " /> : null
+            }
+            {
+              openIndex === 2 ? <img style={{ width: '100%' }} src={acord3} alt="image1" className=" bg-white pr-4 pb-4 " /> : null
+            }
+            {
+              openIndex === 3 ? <img style={{ width: '100%' }} src={acord4} alt="image1" className=" bg-white pr-4 pb-4 " /> : null
+            }
+            {
+              openIndex === 4 ? <img style={{ width: '100%' }} src={accord5} alt="image1" className=" bg-white pr-4 pb-4 " /> : null
+            }
+            {
+              openIndex === 5 ? <img style={{ width: '100%' }} src={acord6} alt="image1" className=" bg-white pr-4 pb-4 " /> : null
+            }
+          
           </div>
           <img src={sec2Group} alt="image1" className="hidden xl:block w-96 h-auto absolute -bottom-44 right-0" />
         </div>

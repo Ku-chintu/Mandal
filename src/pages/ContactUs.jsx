@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import contactBanner from '../assets/svg/contactBanner.svg';
 
 function ContactUs() {
+  document.title = 'Contact Us'
   const [formData, setFormData] = useState({
     fullName: '',
     companyName: '',
@@ -27,9 +28,9 @@ function ContactUs() {
   return (
     <div style={{ marginTop: '85px' }} className="w-full">
       <div>
-        <section className="contact-banner">
-          <div className="min-h-[400px] flex justify-center items-center align-middle">
-            <div>
+        <section className="contact-banner min-h-[450px]">
+          <div className="flex justify-center items-center align-middle">
+            <div className='pt-28'>
               <h1 className="text-white font-semibold heading-3 text-center">Contact Us</h1>
               <p className="text-white  text-xl text-center">Have Questions? We’ve Got Answers—Reach</p>
               <p className="text-white  text-xl text-center">Out Today!</p>
@@ -37,13 +38,12 @@ function ContactUs() {
           </div>
         </section>
         <section style={{ height: '999px' }} className="relative bg-gray-100 flex items-center justify-center">
-          <div className="bg-white p-8 rounded shadow w-3/4 card absolute -top-20 z-10">
-            <h2 className="text-2xl font-bold mb-4">Get In Touch</h2>
-            <p className="text-gray-600 mb-6">Have Questions? We've Got Answers—Reach Out Today!</p>
-
+          <div className="bg-white p-8 rounded-xl shadow w-3/4 card absolute -top-28 z-10">
+            <h2 className="heading-3 font-semibold mb-4">Get In Touch</h2>
+            <p className="text-xl mb-6">Have Questions? We’ve Got Answers—Reach Out Today!</p>
             <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
+              <div className="mb-6">
+                <label htmlFor="fullName" className="block text-lg font-medium ">
                   Full Name
                 </label>
                 <input
@@ -52,12 +52,12 @@ function ContactUs() {
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border rounded-md shadow-sm"
+                  className="mt-1 p-3 w-full border border-primary rounded-md shadow-sm hover:outline-primary outline-1 "
                 />
               </div>
 
-              <div className="mb-4">
-                <label htmlFor="companyName" className="block text-sm font-medium text-gray-700">
+              <div className="mb-6">
+                <label htmlFor="companyName" className="block text-lg font-medium ">
                   Company Name
                 </label>
                 <input
@@ -66,12 +66,12 @@ function ContactUs() {
                   name="companyName"
                   value={formData.companyName}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border rounded-md shadow-sm"
+                  className="mt-1 p-2 w-full border border-primary rounded-md shadow-sm hover:outline-primary outline-1"
                 />
               </div>
 
-              <div className="mb-4">
-                <label htmlFor="workEmail" className="block text-sm font-medium text-gray-700">
+              <div className="mb-6">
+                <label htmlFor="workEmail" className="block text-lg font-medium ">
                   Work Email ID
                 </label>
                 <input
@@ -80,12 +80,12 @@ function ContactUs() {
                   name="workEmail"
                   value={formData.workEmail}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border rounded-md shadow-sm"
+                  className="mt-1 p-2 w-full border border-primary rounded-md shadow-sm hover:outline-primary outline-1"
                 />
               </div>
 
-              <div className="mb-4">
-                <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">
+              <div className="mb-6">
+                <label htmlFor="phoneNumber" className="block text-lg font-medium ">
                   Phone Number
                 </label>
                 <input
@@ -94,27 +94,31 @@ function ContactUs() {
                   name="phoneNumber"
                   value={formData.phoneNumber}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border rounded-md shadow-sm"
+                  className="mt-1 p-2 w-full border border-primary rounded-md shadow-sm hover:outline-primary outline-1"
                 />
               </div>
 
-              <div className="mb-4">
-                <label htmlFor="seniorityLevel" className="block text-sm font-medium text-gray-700">
+              <div className="mb-6">
+                <label htmlFor="seniorityLevel" className="block text-lg font-medium ">
                   Seniority Level
                 </label>
-                <select
+                <select 
                   id="seniorityLevel"
                   name="seniorityLevel"
                   value={formData.seniorityLevel}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border rounded-md shadow-sm"
+                  className="mt-1 p-2 w-full border border-primary rounded-md shadow-sm relative outline-none"
                 >
-                  <option value="">Select the Seniority Level</option>
+                  <option value="">Associate/Junior</option>
+                  <option value="">Mid-Level</option>
+                  <option value="">Manager</option>
+                  <option value="">Director</option>
+                  <option value="">Founder/Owner</option>
                 </select>
               </div>
 
-              <div className="mb-4">
-                <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+              <div className="mb-6">
+                <label htmlFor="description" className="block text-lg font-medium ">
                   Which of the following describes
                 </label>
                 <select
@@ -122,14 +126,18 @@ function ContactUs() {
                   name="description"
                   value={formData.description}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border rounded-md shadow-sm"
+                  className="mt-1 p-2 w-full border border-primary rounded-md shadow-sm outline-none"
                 >
-                  <option value="">Select the Option</option>
+                  <option value="">Sofware Engineer</option>
+                  <option value="">Data Analyst</option>
+                  <option value="">Hr Manager</option>
+                  <option value="">Quality Assurance Engineer</option>
+                  <option value="">IT Support Specialist</option>
                 </select>
               </div>
 
-              <div className="mb-4">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              <div className="mb-6">
+                <label htmlFor="message" className="block text-lg font-medium ">
                   Message
                 </label>
                 <textarea
@@ -137,7 +145,7 @@ function ContactUs() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-1 p-2 w-full border rounded-md shadow-sm"
+                  className="mt-1 p-2 w-full border border-primary rounded-md shadow-sm hover:outline-primary outline-1"
                   rows={4}
                 />
               </div>

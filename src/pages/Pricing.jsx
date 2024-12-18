@@ -3,6 +3,7 @@ import Cancel from '../assets/svg/Cancel.svg';
 import CheckMark from '../assets/svg/Check Mark.svg';
 
 function Pricing() {
+  document.title = 'Pricing'
   const [isMonthly, setisMonthly] = useState(true);
 
   return (

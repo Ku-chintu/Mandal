@@ -5,6 +5,7 @@ import sec2Group from '../assets/svg/sec2Group.svg';
 import sec2top from '../assets/svg/sec2top.svg';
 
 function Services() {
+    document.title = 'Services'
     return (
         <div style={{marginTop: '85px'}} className="w-full p-4 container m-auto">
             <section id='recruitment-as-services' className=' xl:grid grid-cols-2 pb-8 xl:pb-44 mt-12'>
