@@ -10,6 +10,8 @@ import Services from './pages/Services';
 import Solutions from './pages/Solutions';
 // import Resources from './pages/Resources';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import TermsOfUse from './pages/TermsOfUse';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 function App() {
   return (
     <div className=" font-inter text-primary">
@@ -22,9 +24,12 @@ function App() {
             <Route path="/career" element={<Career />} />
             <Route path="/pricing" element={<Pricing />} />
             {/* <Route path="/resources" element={<Resources />} /> */}
+            <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
             <Route path="/contactus" element={<ContactUs />} />
             <Route path="/services" element={<Services />} />
             <Route path="/solution" element={<Solutions />} />
+            <Route path="/TermsOfUse" element={<TermsOfUse />} />
+           
           </Routes>
         {/* </div> */}
       </Router>

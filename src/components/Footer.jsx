@@ -22,20 +22,27 @@ const Footer = () => {
                         <img src={Twitter} alt="image1" className="w-8 h-8" />
                     </div>
                 </div>
-                <div className=' border-t border-b border-iconBg grid grid-cols-3 md:grid-cols-5 gap-4 text-white' >
+                <div className=' border-t border-b border-iconBg grid grid-cols-3 md:grid-cols-7 gap-4 text-white' >
                     <div className="p-4 ">
-                        <h5 className='title mb-4'>Get Started</h5>
-                        <h6 className='subtitle mb-4'>Solutions</h6>
-                        <h6 className='subtitle mb-4'>Resource</h6>
+                        <h5 className='title mb-4'>Services</h5>
+                        <h6 className='subtitle mb-4'><a href="/services/#recruitment-as-services"  className='cursor-pointer'>Recruitement as Service</a></h6>
+                        <h6 className='subtitle mb-4'><a href="/services/#applicant-on-demand"  className='cursor-pointer'>Applicant on Demand</a></h6>
                     </div>
                     <div className="p-4 col-span-2 sm:col-span-1 ">
-                        <h5 className='title mb-4'>Support</h5>
-                        <h6 className='subtitle mb-4'>Contact Us</h6>
-                        <h6 className='subtitle mb-4'>Pricing</h6>
-                        <h6 className='subtitle mb-4'>Help Center</h6>
-                        {/* <h6 className='subtitle mb-4'>My Account</h6> */}
+                        <h5 className='title mb-4'>Solutions</h5>
+                        <h6 className='subtitle mb-4'><a href="/solution/#resume-parsing"  className='sm:mb-0 cursor-pointer'>Resume Parsing</a></h6>
+                        <h6 className='subtitle mb-4'><a href="/solution/#scoring"  className='sm:mb-0 cursor-pointer'>Scoring</a></h6>
+                        <h6 className='subtitle mb-4'><a href="/solution/#connect"  className='sm:mb-0 cursor-pointer'>Connect</a></h6>
+                        <h6 className='subtitle mb-4'><a href="/solution/#enrichment"  className='sm:mb-0 cursor-pointer'>Enrichment</a></h6>
                     </div>
-                    <div className=" p-4 col-span-3">
+                    <div className="p-4 col-span-3 sm:col-span-2 ">
+                        <h5 className='title mb-4'>Company</h5>
+                        <h6 className='subtitle mb-4'><a href="/contactus"  className='sm:mb-0 cursor-pointer'>Contact Us</a></h6>
+                        <h6 className='subtitle mb-4'><a href="/resources"  className='sm:mb-0 cursor-pointer'>Resources</a></h6>
+                        <h6 className='subtitle mb-4'><a href="/career"  className='sm:mb-0 cursor-pointer'>Careers</a></h6>
+                        <h6 className='subtitle mb-4'><a href="/pricing"  className='sm:mb-0 cursor-pointer'>Pricing</a></h6>
+                    </div>
+                    <div className=" p-4 col-span-4 sm:col-span-3">
                         <h5 className='title mb-4'>Subscribe for Updates</h5>
                         <h6 className='subtitle mb-4'>Recruitment strategy tips, guides, videos, and live Q&As delivered right to your inbox.</h6>
                         <div className="">
@@ -52,7 +59,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='p-4'>
-                    <p className=' text-center text-white text-base'>© 2024 mAI. All rights reserved. Privacy Policy | Terms of Service.</p>
+                    <p className=' text-center text-white text-base'>© 2024 mAI. All rights reserved. <a href="/PrivacyPolicy" className="">Privacy Policy | </a><a href="/TermsOfUse" className="">Terms of Service.</a></p>
                 </div>
             </div>
         </footer>

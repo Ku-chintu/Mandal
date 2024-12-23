@@ -65,7 +65,7 @@ const Header = () => {
                 Pricing
               </a>
               <a href="/career" className="">
-                Career
+                Careers
               </a>
               <a href="/resources" className="">
                 Resources
@@ -169,7 +169,7 @@ const Header = () => {
                       {/* <a href="/services/#recruitment-as-services'"  className='cursor-pointer' onClick={() => handleRedirect('/services/#recruitment-as-services')}> */}
                         <div className='flex items-center gap-4 mb-4'>
                           <img src={handicon} alt="handicon" className="w-8 h-8" />
-                          <p className='text-xl font-medium'>Recruitment as Services</p>
+                          <p className='text-xl font-medium'>Recruitment as Service</p>
                         </div>
                         <p className='text-xs'>We find the brightest minds, For roles that redefine. Connecting passion with purpose, Creating teams that shine. Your success is our design.</p>
                       </a>
