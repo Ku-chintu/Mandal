@@ -98,6 +98,23 @@ function Career() {
 
       {/* Right Panel */}
       <div className="w-full md:w-2/3 p-4 overflow-auto">
+      <div className="flex justify-between items-center mb-4">
+          <h2 className="text-lg font-semibold">Upload Your Resume For Perfect Match</h2>
+          <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Upload Resume</button>
+        </div>
+        <div className="flex gap-2 mb-4">
+          <input
+            type="text"
+            placeholder="Search Job"
+            className="flex-1 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
+          <input
+            type="text"
+            placeholder="Search Location"
+            className="flex-1 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
+          <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">🔍</button>
+        </div>
         {selectedJob ? (
           <div className="bg-white p-4 rounded-lg shadow">
             <h3 className="text-lg font-semibold mb-2">{selectedJob.jobTitle || "N/A"}</h3>
@@ -107,9 +124,7 @@ function Career() {
               <span className="bg-gray-200 text-sm px-2 py-1 rounded">{`${selectedJob.totalExpMin || 0} Years`}</span>
               <span className="bg-gray-200 text-sm px-2 py-1 rounded">{selectedJob.jobType || "N/A"}</span>
             </div>
-            <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 mb-4">
-              Apply Now
-            </button>
+            
             <div>
               <h4 className="font-semibold text-md mb-2">Job Description:</h4>
               <p className="text-sm text-gray-600 mb-4">{selectedJob.jobDesc || "No description available."}</p>
