@@ -113,7 +113,7 @@ function Career() {
             placeholder="Search Location"
             className="flex-1 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:bg-primary"
           />
-          <button className="text-white px-4 py-2 rounded hover:bg-primary">🔍</button>
+          <button className="bg-primary text-white px-4 py-2 rounded hover:bg-primary">🔍</button>
         </div>
         {selectedJob ? (
           <div className="bg-white p-4 rounded-lg shadow">
