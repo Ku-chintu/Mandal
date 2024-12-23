@@ -171,7 +171,7 @@ const Header = () => {
                           <img src={handicon} alt="handicon" className="w-8 h-8" />
                           <p className='text-xl font-medium'>Recruitment as Service</p>
                         </div>
-                        <p className='text-xs'>We find the brightest minds, For roles that redefine. Connecting passion with purpose, Creating teams that shine. Your success is our design.</p>
+                        <p className='text-xs'>Effortless hiring, tailored for your success. Build top-tier teams, scale seamlessly, and focus on growth, we’ll handle the rest.</p>
                       </a>
                     </div>
                     <div>
@@ -181,7 +181,7 @@ const Header = () => {
                           <img src={Applicant} alt="Applicant" className="w-8 h-8" />
                           <p className='text-xl font-medium'>Applicant on Demand</p>
                         </div>
-                        <p className='text-xs'>We find the brightest minds, For roles that redefine. Connecting passion with purpose, Creating teams that shine. Your success is our design.</p>
+                        <p className='text-xs'>Access top talent on demand, with results that drive success. Pay only for performance, tailored to your needs.</p>
                       </a>
                     </div>
                   </div>
@@ -196,7 +196,7 @@ const Header = () => {
                           <img src={Resume} alt="Resume" className="w-8 h-8" />
                           <p className='text-xl font-medium'>Resume Parsing</p>
                         </div>
-                        <p className='mb-4 sm:mb-0 text-xs'>We find the brightest minds, For roles that redefine. Connecting passion with purpose, Creating teams that shine. Your success is our design.</p>
+                        <p className='mb-4 sm:mb-0 text-xs'>Effortlessly streamline your recruitment process with AI-powered resume parsing. Our API delivers structured, accurate data, saving time and enhancing hiring efficiency.</p>
                       </a>
                       <a href="/solution/#scoring"  className='sm:mb-0 cursor-pointer'>
                       {/* <div className='mb-4 sm:mb-0 cursor-pointer' onClick={() => handleRedirect('/solutions/#scoring')}> */}
@@ -220,7 +220,7 @@ const Header = () => {
                           <img src={jdparsing} alt="jdparsing" className="w-8 h-8" />
                           <p className='text-xl font-medium'>JD Parsing</p>
                         </div>
-                        <p className='mb-4 sm:mb-0 text-xs'>We find the brightest minds, For roles that redefine. Connecting passion with purpose, Creating teams that shine. Your success is our design.</p>
+                        <p className='mb-4 sm:mb-0 text-xs'>Automate and streamline job description creation with AI-powered parsing. Enhance recruitment efficiency with accurate, structured data extraction.</p>
                       </a>
                       <a href="/solution/#connect"  className='sm:mb-0 cursor-pointer'>
                       {/* <div className='mb-4 sm:mb-0 cursor-pointer' onClick={() => handleRedirect('/solutions/#connect')}> */}

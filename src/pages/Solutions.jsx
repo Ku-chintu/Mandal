@@ -32,7 +32,7 @@ function Services() {
                         <h1 className='heading-2 font-bold'>Simplify Your Hiring Process with AI-Powered Resume Parsing.</h1>
                     </div>
                     <div className='mb-14'>
-                        <p className='p-text'>Leverage advanced parsing technology to convert complex resumes and job descriptions into structured, actionable data. Our solution extracts key informced parsing technology to convert complex resumes and job tion like skills, .to convert complex resumes and job descriptions into structured, actionable data. Our solution extracts key information like skills, .</p>
+                        <p className='p-text'>Our AI-based resume parsing service offers businesses an efficient and accurate solution for streamlining the hiring process. By leveraging advanced AI technology, we help you automatically extract key information from resumes, such as skills, work experience, education, and contact details. Our service supports multiple file formats and can quickly process large volumes of resumes, saving your HR team valuable time. With powerful natural language processing, the system ensures precise extraction of relevant data from resumes. This reduces manual errors, enhances productivity, and accelerates decision-making. Our customizable solution adapts to various industries, helping you find the best candidates faster and improving your recruitment efficiency. Additionally, our solution is available through an easy-to-integrate API, allowing seamless integration with your existing recruitment systems.</p>
                     </div>
                     <div>
                         <button className='btn text-white rounded-full px-10 py-3.5 bg-primary'>Start Now</button>
@@ -47,13 +47,13 @@ function Services() {
                     <img src={sec2Group} alt="image1" className="hidden xl:block w-96 h-auto absolute -bottom-72 right-0" />
                 </div>
             </section>
-            <section id='scoring' className=' xl:grid grid-cols-2 pb-20 mt-20'>
+            <section id='jd-prsing' className=' xl:grid grid-cols-2 pb-20 mt-20'>
                 <div className=' relative'>
                     <div className=' mb-8 mt-0 xl:mb-14 xl:mt-32'>
                         <h1 className='heading-2 font-bold'>Job Description Parsing Made Simple: Focus on What Matters.</h1>
                     </div>
                     <div className='mb-14'>
-                        <p className='p-text'>Leverage advanced parsing technology to convert complex resumes and job descriptions into structured, actionable data. Our solution extracts key informced parsing technology to convert complex resumes and job tion like skills, .to convert complex resumes and job descriptions into structured, actionable data. Our solution extracts key information like skills, .</p>
+                        <p className='p-text'>Our AI-based job description parsing service offers businesses an efficient and accurate way to streamline the creation and management of job postings. By leveraging advanced AI and natural language processing, we automatically extract key information such as job titles, required skills, responsibilities, qualifications, and location. This ensures job descriptions are structured and consistent across all listings. Our solution supports various file formats, making it highly versatile and parsed data is provided in a structured format for easy integration into your existing recruitment systems. With customizable parsing capabilities, you can tailor the service to meet industry-specific needs. The automated process saves time and reduces manual effort, enabling faster job posting creation and improved productivity. Our solution enhances job matching by ensuring clear, precise descriptions that align with candidate profiles. Available through an API, it seamlessly integrates with your ATS. Ultimately, our service helps improve recruitment efficiency, reduce time-to-hire, and deliver better hiring outcomes.</p>
                     </div>
                     <div>
                         <button className='btn text-white rounded-full px-10 py-3.5 bg-primary'>Start Now</button>
@@ -96,7 +96,7 @@ function Services() {
                 </div>
 
             </section>
-            <section id='jd-prsing' className=' xl:grid grid-cols-2 pb-20 mt-20'>
+            <section id='scoring' className=' xl:grid grid-cols-2 pb-20 mt-20'>
                 <div className=' relative'>
                     <div className=' mb-8 mt-0 xl:mb-14 xl:mt-32'>
                         <h1 className='heading-2 font-bold'>Building stronger teams by connecting the right talent with the right opportunities.</h1>
