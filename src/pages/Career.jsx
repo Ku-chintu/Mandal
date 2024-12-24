@@ -99,10 +99,12 @@ function Career() {
 
       {/* Right Panel */}
       <div className="w-full md:w-2/3 p-4 overflow-auto">
-      <div className="flex justify-between items-center mb-4">
+      {/* <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold">Upload Your Resume For Perfect Match</h2>
           <button className="bg-primary text-white px-4 py-2 rounded hover:bg-green-900">Upload Resume</button>
-        </div>
+          
+        </div> */}
+        <UploadResume/>
         <div className="flex gap-2 mb-4">
           <input
             type="text"
