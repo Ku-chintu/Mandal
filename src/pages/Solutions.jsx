@@ -67,7 +67,7 @@ function Services() {
                     </div>
                 </div>
             </section>
-            <section id='enrichment' className=' xl:grid grid-cols-2 pb-20 mt-20'>
+            <section id='scoring' className=' xl:grid grid-cols-2 pb-20 mt-20'>
                 <div className='hidden xl:flex  relative  justify-center align-middle items-center sm:px-18 lg:px-28 mt-20'>
                     <div className=' '>
                         <img src={solutionSec3} alt="solutionSec1" className=" bg-white  pb-4  w-full " />
@@ -79,7 +79,7 @@ function Services() {
                         <h1 className='heading-2 font-bold'>Empowering recruiters with intelligent scoring to identify top talent faster.</h1>
                     </div>
                     <div className='mb-14'>
-                        <p className='p-text'>Leverage advanced parsing technology to convert complex resumes and job descriptions into structured, actionable data. Our solution extracts key informced parsing technology to convert complex resumes and job tion like skills, .to convert complex resumes and job descriptions into structured, actionable data. Our solution extracts key information like skills, .</p>
+                        <p className='p-text'>Our AI-based candidate scoring service is designed to efficiently handle high-volume inbound applications, streamlining your recruitment process by automatically matching resumes with job descriptions. Using advanced machine learning algorithms, the system analyzes resumes for key skills, experience, and keywords, assigning a compatibility score based on how well candidates align with job requirements. This technology significantly reduces manual screening time, ensuring a consistent, unbiased evaluation of applicants. It ranks candidates and highlights top matches, helping you quickly identify the most qualified talent. Our solution boosts recruitment efficiency and scalability, while maintaining the crucial human touch in final hiring decisions.</p>
                     </div>
                     <div>
                         <button className='btn text-white rounded-full px-10 py-3.5 bg-primary'>Start Now</button>
@@ -96,13 +96,13 @@ function Services() {
                 </div>
 
             </section>
-            <section id='scoring' className=' xl:grid grid-cols-2 pb-20 mt-20'>
+            <section id='connect' className=' xl:grid grid-cols-2 pb-20 mt-20'>
                 <div className=' relative'>
                     <div className=' mb-8 mt-0 xl:mb-14 xl:mt-32'>
                         <h1 className='heading-2 font-bold'>Building stronger teams by connecting the right talent with the right opportunities.</h1>
                     </div>
                     <div className='mb-14'>
-                        <p className='p-text'>Leverage advanced parsing technology to convert complex resumes and job descriptions into structured, actionable data. Our solution extracts key informced parsing technology to convert complex resumes and job tion like skills, .to convert complex resumes and job descriptions into structured, actionable data. Our solution extracts key information like skills, .</p>
+                        <p className='p-text'>Transform your recruitment approach with an AI-powered search platform designed to revolutionize the way you discover top-tier talent. With the power of AI, you can quickly and accurately pinpoint the best candidates across a range of sourcing channels, including the open web and major job boards, ensuring a precise match to your unique hiring criteria. Gain a distinct competitive edge by uncovering high-quality talent that others may miss, all while benefiting from our unwavering dedication to sourcing excellence. This advanced solution empowers you to stay ahead of the curve, securing the right talent faster and more efficiently than ever before.</p>
                     </div>
                     <div>
                         <button className='btn text-white rounded-full px-10 py-3.5 bg-primary'>Start Now</button>
@@ -116,13 +116,13 @@ function Services() {
                     </div>
                 </div>
             </section>
-            <section id='connect' className=' xl:grid grid-cols-2 pb-20 mt-20'>
+            <section id='enrichment' className=' xl:grid grid-cols-2 pb-20 mt-20'>
                 <div className=' relative'>
                     <div className=' mb-8 mt-0 xl:mb-14 xl:mt-32'>
-                        <h1 className='heading-2 font-bold'>Connecting You with the Right Opportunities, On Demand.</h1>
+                        <h1 className='heading-2 font-bold'>Enhancing every profile with enriched insights for smarter hiring decisions.</h1>
                     </div>
                     <div className='mb-14'>
-                        <p className='p-text'>Leverage advanced parsing technology to convert complex resumes and job descriptions into structured, actionable data. Our solution extracts key informced parsing technology to convert complex resumes and job tion like skills, .to convert complex resumes and job descriptions into structured, actionable data. Our solution extracts key information like skills, .</p>
+                        <p className='p-text'>The solution enhances candidate profiles through comprehensive data enrichment and continuous updates. It aggregates information from various sources like resumes, social media, and external databases, providing a deeper understanding of each applicant’s skills, experience, and professional background. Additionally, the solution keeps profiles current by regularly updating them with the latest available data from multiple channels. By utilizing advanced algorithms, it extracts key competencies and relevant data points, offering a holistic view of candidates. This enriched and up-to-date data helps hiring teams make more informed decisions, improving the quality of hires while saving time. The solution ensures that every candidate profile is thorough, accurate, and aligned with your hiring needs.</p>
                     </div>
                     <div>
                         <button className='btn text-white rounded-full px-10 py-3.5 bg-primary'>Start Now</button>

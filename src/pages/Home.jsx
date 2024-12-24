@@ -39,11 +39,11 @@ function Home() {
     },
     {
       title: "AI-powered job and resume parsing",
-      content: "mAl's chatbot powered by conversational Al is an intelligent tool that automates the early stages of candidate screening by engaging with applicants, asking role-specific questions, and evaluating their responses against predefined criteria. This ensures that only the most suitable candidates move forward in the recruitment process, saving time, reducing human bias, and improving overall hiring efficiency.",
+      content: "Leverage advanced parsing technology to convert complex resumes and job descriptions into structured, actionable data.",
     },
     {
       title: "On demand qualified applicant",
-      content: "mAl's chatbot powered by conversational Al is an intelligent tool that automates the early stages of candidate screening by engaging with applicants, asking role-specific questions, and evaluating their responses against predefined criteria. This ensures that only the most suitable candidates move forward in the recruitment process, saving time, reducing human bias, and improving overall hiring efficiency.",
+      content: "We provide a flexible, pay-for-performance service model that connects businesses with skilled professionals for specific tasks or projects. By linking compensation to task completion and goal achievement, businesses can access top talent without long-term commitments, ensuring cost-effective, high-quality results.",
     },
   ];
 

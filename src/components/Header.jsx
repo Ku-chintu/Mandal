@@ -179,7 +179,7 @@ const Header = () => {
                       {/* <div className='cursor-pointer' onClick={() => handleRedirect('/services/#applicant-on-demand')}> */}
                         <div className='flex items-center gap-4 mb-4'>
                           <img src={Applicant} alt="Applicant" className="w-8 h-8" />
-                          <p className='text-xl font-medium'>Applicant on Demand</p>
+                          <p className='text-xl font-medium'>Talent on Demand</p>
                         </div>
                         <p className='text-xs'>Access top talent on demand, with results that drive success. Pay only for performance, tailored to your needs.</p>
                       </a>
@@ -204,7 +204,7 @@ const Header = () => {
                           <img src={scorring} alt="scorring" className="w-8 h-8" />
                           <p className='text-xl font-medium'>Scoring</p>
                         </div>
-                        <p className='mb-4 sm:mb-0 text-xs'>We find the brightest minds, For roles that redefine. Connecting passion with purpose, Creating teams that shine. Your success is our design.</p>
+                        <p className='mb-4 sm:mb-0 text-xs'>AI-powered scoring to effortlessly manage high-volume applications. Quickly identify top candidates with precision and efficiency.</p>
                       </a>
                       <a href="/solution/#enrichment"  className='sm:mb-0 cursor-pointer'>
                       {/* <div className='mb-4 sm:mb-0 cursor-pointer' onClick={() => handleRedirect('/solutions/#enrichment')}> */}
@@ -212,7 +212,7 @@ const Header = () => {
                           <img src={enrichment} alt="Resume" className="w-8 h-8" />
                           <p className='text-xl font-medium'>Enrichment</p>
                         </div>
-                        <p className='mb-4 sm:mb-0 text-xs'>We find the brightest minds, For roles that redefine. Connecting passion with purpose, Creating teams that shine. Your success is our design.</p>
+                        <p className='mb-4 sm:mb-0 text-xs'>Enhance candidate profiles with enriched, up-to-date insights. Make smarter, data-driven hiring decisions for better outcomes.</p>
                       </a>
                       <a href="/solution/#jd-prsing"  className='sm:mb-0 cursor-pointer'>
                       {/* <div className='mb-4 sm:mb-0 cursor-pointer' onClick={() => handleRedirect('/solutions/#jd-parsing')}> */}
@@ -226,9 +226,9 @@ const Header = () => {
                       {/* <div className='mb-4 sm:mb-0 cursor-pointer' onClick={() => handleRedirect('/solutions/#connect')}> */}
                         <div className='flex items-center gap-4 mb-4'>
                           <img src={connect} alt="connect" className="w-8 h-8" />
-                          <p className='text-xl font-medium'>Connect</p>
+                          <p className='text-xl font-medium'>Sourcing</p>
                         </div>
-                        <p className='text-xs'>We find the brightest minds, For roles that redefine. Connecting passion with purpose, Creating teams that shine. Your success is our design.</p>
+                        <p className='text-xs'>Unlock top talent faster with AI-powered precision. Gain a competitive edge with unmatched sourcing excellence.</p>
                       </a>
                     </div>
                   </div>
