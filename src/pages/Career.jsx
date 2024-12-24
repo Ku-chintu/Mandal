@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import UploadResume from "../components/UploadResume";
 import axios from "axios";
 import service from "../service";
 import search from "../assets/svg/search.svg";
@@ -67,8 +68,8 @@ function Career() {
     <div className="flex flex-col mt-20 -scroll-mt-96 md:flex-row bg-gray-100 h-screen">
       {/* Left Panel */}
       <div className="w-full md:w-1/3 bg-white p-4 overflow-auto">
-        <h2 className="text-lg font-semibold mb-4 border-b pb-2">
-          Best Matches <span className="text-gray-500 text-sm">{jobs.length} Jobs</span>
+        <h2 className="bg-primary text-gray-300 text-lg font-semibold mb-4 border-b pb-2">
+          Best Matches <span className="text-gray-300 text-sm align-middle ml-64 ">{jobs.length} Jobs</span>
         </h2>
         <div className="space-y-4">
           {jobs.map((job, index) => (
@@ -76,7 +77,7 @@ function Career() {
               key={index}
               onClick={() => setSelectedJob(job)} // Update the selected job
               className={`border rounded-lg p-4 hover:shadow-md transition-shadow ${
-                selectedJob === job ? "border-green-500" : ""
+                selectedJob === job ? "border-primary" : ""
               }`}
             >
               <h3 className="text-md font-medium">{job.jobTitle || "N/A"}</h3>
@@ -100,7 +101,7 @@ function Career() {
       <div className="w-full md:w-2/3 p-4 overflow-auto">
       <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold">Upload Your Resume For Perfect Match</h2>
-          <button className="bg-primary text-white px-4 py-2 rounded hover:bg-green-700">Upload Resume</button>
+          <button className="bg-primary text-white px-4 py-2 rounded hover:bg-green-900">Upload Resume</button>
         </div>
         <div className="flex gap-2 mb-4">
           <input
@@ -113,12 +114,12 @@ function Career() {
             placeholder="Search Location"
             className="flex-1 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:bg-primary"
           />
-          <button className="bg-primary text-white px-4 py-2 rounded hover:bg-primary">🔍</button>
+          <button className="bg-primary text-white px-4 py-2 rounded hover:bg-green-900">🔍</button>
         </div>
         {selectedJob ? (
           <div className="bg-white p-4 rounded-lg shadow">
             <h3 className="text-lg font-semibold mb-2">{selectedJob.jobTitle || "N/A"}</h3>
-            <button className="bg-primary text-white px-4 py-2 rounded hover:bg-primary mb-4">
+            <button className="flex-1 bg-primary text-white px-4 py-2 rounded hover:bg-green-900 mb-4">
             Apply Now
           </button>
             <p className="text-sm text-gray-500">{selectedJob.company || "N/A"}</p>
