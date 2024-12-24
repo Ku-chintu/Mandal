@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import landingPage from '../assets/svg/landingpage.svg';
 import Image1 from '../assets/svg/image 1.svg'; // Adjust the path as needed
 import Group1 from '../assets/svg/Group 1.svg'; // Adjust the path as needed
 import Group2 from '../assets/svg/Group 2.svg'; // Adjust the path as needed
@@ -49,15 +50,15 @@ function Home() {
 
   const handleAccordionClick = (index) => {
     console.log('check 111111111111111111111111', index);
-    
+
     setOpenIndex(index);
   };
 
   return (
-    <div style={{marginTop: '85px'}} className="w-full p-4 container m-auto">
+    <div className="w-full p-4 container m-auto">
       <section className=' xl:grid grid-cols-2 pb-44 mt-12'>
         <div>
-          <div className=' mb-8 mt-0 xl:mb-14 xl:mt-32'>
+          <div className=' mb-8 mt-0 xl:mb-14 xl:mt-20'>
             <h1 className='heading-1 font-bold'>AI powered solution</h1>
             <p className='heading-1 font-medium'>delivering top talent</p>
           </div>
@@ -68,12 +69,9 @@ function Home() {
             <button className='btn text-white rounded-full px-10 py-3.5 bg-primary'>Get Started</button>
           </div>
         </div>
-        <div className='flex md:justify-center align-middle items-center sm:px-18 lg:px-28 mt-20'>
+        <div className='flex md:justify-center align-middle items-center sm:px-18 lg:px-28 mt-10'>
           <div className=' relative mr-12'>
-            <img style={{ width: '100%', width: '206px' }} src={Group1} alt="image1" className=" absolute -top-11 -left-11 -z-50" />
-            <img style={{ width: '100%', width: '206px' }} src={Group2} alt="image1" className=" absolute -bottom-16 -right-16 -z-50" />
-            <img style={{ height: '90%', borderBottomRightRadius: '112px' }} src={Rectangle} alt="image1" className="absolute -bottom-6 -right-6 -z-50 w-auto" />
-            <img style={{ width: '100%', borderBottomRightRadius: '112px', borderTopLeftRadius: '112px' }} src={Image1} alt="image1" className=" bg-white pr-4 pb-4  w-3/4 sm:w-full " />
+            <img src={landingPage} alt="image1"/>
 
             <div className=' absolute top-1/4 sm:top-1/4 -right-10 sm:-right-28 md:-right-32'>
               <div className=' h-12 w-44  sm:h-16  sm:w-52 p-4 bg-white shadow-2xl rounded-xl mb-2 sm:mb-4 text-sm sm:text-xl font-medium items-center flex justify-center text-center'>Transform TA</div>
@@ -84,7 +82,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className=' xl:grid grid-cols-2 py-44 '>
+      <section className=' xl:grid grid-cols-2 '>
         <div className='hidden  xl:flex md:justify-center align-middle items-center px-4 md:px-12 lg:px-24 relative'>
           <div className=''>
             <img style={{ width: '100%' }} src={Landingpage} alt="image1" className=" bg-white pr-4 pb-4 " />
@@ -92,7 +90,7 @@ function Home() {
           <img src={sec2top} alt="image1" className="w-96 h-auto absolute -top-64 left-0" />
         </div>
         <div className='relative'>
-          <div className=' mb-6 mt-0 xl:mb-14 xl:mt-12'>
+          <div className=' mb-6 mt-0 xl:mb-14'>
             <h1 className='heading-2 font-bold'>Talent solution with seamless workflow integration</h1>
           </div>
           <div className='mb-10 relative'>
@@ -106,7 +104,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className=' xl:grid grid-cols-2 py-44 '>
+      <section className=' xl:grid grid-cols-2'>
         <div className='relative'>
           <div className=' mb-6 mt-0 xl:mb-14 xl:mt-32'>
             <h1 className='heading-2 font-bold'>Real-time insights and analytics</h1>
@@ -125,7 +123,7 @@ function Home() {
           <img src={sec2Group} alt="image1" className="hidden xl:block w-96 h-auto absolute -bottom-72 right-0" />
         </div>
       </section>
-      <section className=' xl:grid grid-cols-2 py-44 '>
+      <section className=' xl:grid grid-cols-2 '>
         <div className='hidden  xl:flex md:justify-center align-middle items-center px-4 md:px-12 lg:px-24 relative'>
           <div className=''>
             {/* <img style={{ width: '100%'}} src={Landingpage} alt="image1" className=" bg-white pr-4 pb-4 " /> */}
@@ -148,11 +146,11 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className=' pt-44 '>
+      <section className='pt-20 '>
         <div className='relative'>
-          <div className=' mb-6 mt-0 xl:mb-14 xl:mt-0'>
+          {/* <div className=' mb-6 mt-0 xl:mb-14 xl:mt-0'> */}
             <h1 className='heading-2 font-bold text-center text-5xl'>What distinguishes mAI from the rest</h1>
-          </div>
+          {/* </div> */}
           <img src={sec2top} alt="image1" className="w-96 h-auto absolute -top-20 left-0" />
         </div>
       </section>
@@ -201,7 +199,7 @@ function Home() {
             {
               openIndex === 5 ? <img style={{ width: '100%' }} src={acord6} alt="image1" className=" bg-white pr-4 pb-4 " /> : null
             }
-          
+
           </div>
           <img src={sec2Group} alt="image1" className="hidden xl:block w-96 h-auto absolute -bottom-44 right-0" />
         </div>
