@@ -66,7 +66,9 @@ function Home() {
             <p className='p-text'>Streamline hiring and boost talent quality with an all-in-one platform for AI, CRM, sourcing,analytics, and automation.</p>
           </div>
           <div>
+          <a href="/contactus"  className='sm:mb-0 cursor-pointer'>
             <button className='btn text-white rounded-full px-10 py-3.5 bg-primary'>Get Started</button>
+            </a>
           </div>
         </div>
         <div className='flex md:justify-center align-middle items-center sm:px-18 lg:px-28 mt-10'>
