@@ -72,7 +72,7 @@ function Pricing() {
             </div>
             <div className='p-4'>
             <a href="/contactus"  className='sm:mb-0 cursor-pointer'>
-              <button className='text-white font-semibold text-xl bg-primary py-3 rounded-md w-full '>Contact Us</button>
+              <button className='text-white font-semibold text-xl bg-primary py-2 rounded-md w-full '>Contact Us</button>
               </a>
             </div>
           </div>
@@ -109,7 +109,7 @@ function Pricing() {
             </div>
             <div className='p-4'>
             <a href="/contactus"  className='sm:mb-0 cursor-pointer'>
-              <button className='text-white font-semibold text-xl bg-primary py-3 rounded-md w-full '>Contact Us</button></a>
+              <button className='text-white font-semibold text-xl bg-primary py-2 rounded-md w-full '>Contact Us</button></a>
             </div>
           </div>
           <div className='border border-gray-300 rounded-md'>
@@ -145,7 +145,7 @@ function Pricing() {
             </div>
             <div className='p-4'>
             <a href="/contactus"  className='sm:mb-0 cursor-pointer'>
-              <button className='text-white font-semibold text-xl bg-primary py-3 rounded-md w-full '>Contact Us</button></a>
+              <button className='text-white font-semibold text-xl bg-primary py-2 rounded-md w-full '>Contact Us</button></a>
             </div>
           </div>
         </div>
