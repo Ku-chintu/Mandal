@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import UploadResume from "../components/UploadResume";
+import ResumeUpload from "../components/ResumeUpload";
 import axios from "axios";
 import service from "../service";
 import search from "../assets/svg/search.svg";
@@ -104,7 +104,7 @@ function Career() {
           <button className="bg-primary text-white px-4 py-2 rounded hover:bg-green-900">Upload Resume</button>
           
         </div> */}
-        <UploadResume/>
+        <ResumeUpload/>
         <div className="flex gap-2 mb-4">
           <input
             type="text"
