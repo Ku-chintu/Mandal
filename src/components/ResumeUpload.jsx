@@ -95,7 +95,7 @@ const ResumeUpload = () => {
   };
 
   return (
-    <div className="flex justify-between items-center mb-4">
+    <div className="flex justify-between items-center mb-4 font-semibold">
       <h2>Upload Resume</h2>
       <div>
           {/* Show the file input only if no file is selected */}
@@ -113,13 +113,8 @@ const ResumeUpload = () => {
             >
               {uploading ? 'Uploading...' : 'Upload Resume'}
             </button>
-            <button 
-              className="bg-red-800 text-white px-4 py-1 rounded hover:bg-red-700 ml-2" 
-              onClick={handleRemoveFile}
-            >
-              Remove File
-            </button>
-            <p>{file.name}</p>
+            <span className='px-2 py-1'>{file.name}</span>
+            <span className="text-red-800 py-1 rounded hover:text-red-600 font-semibold" onClick={handleRemoveFile} >x</span>
             <span className={messageColor} >{message}</span>
           </div>
         )}
