@@ -90,7 +90,7 @@ const UploadResume = () => {
           onDrop={handleDrop}
         >
           <button onClick={() => fileInputRef.current?.click()} className="bg-primary text-white px-4 py-2 rounded hover:bg-green-900">
-          Drag & Drop a File Or Upload Resume</button>
+          Upload Resume</button>
           <input
             type="file"
             ref={fileInputRef}
