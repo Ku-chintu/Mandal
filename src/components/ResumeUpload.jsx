@@ -123,13 +123,14 @@ const ResumeUpload = () => {
             <span className={messageColor} >{message}</span>
           </div>
         )}
-      </div>
+      
       {uploading && (
         <div className="progress-bar-container">
           <progress value={progress} max="100" />
           <span>{progress}%</span>
         </div>
       )}
+      </div>
     </div>
   );
 };
