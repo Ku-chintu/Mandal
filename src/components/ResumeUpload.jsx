@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import service from '../service';
 
 const ResumeUpload = () => {
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0);
   const [uploading, setUploading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [messageColor, setMessageColor] = useState('text-green-950');
 
   // Handle file selection
   const handleFileChange = (event) => {
@@ -64,11 +67,20 @@ const ResumeUpload = () => {
         },
       };
 
-      // Simulate the POST request to the backend API
-      await axios.post('https://your-api-endpoint.com/upload', resumeData, config);
+      const response = await service.requestApi.resumeUpload(resumeData, config)
+      if(response.status === 200)
+      {
       setProgress(100);
       setUploading(false);
-      alert('Resume uploaded successfully!');
+      setMessageColor('text-green-950');
+      setMessage("Resume uploaded successfully!");
+      handleRemoveFile();
+      }
+      else{
+        setUploading(false);
+        setMessageColor('text-red-800');
+        setMessage("Error uploading resume!");
+      }
     } catch (error) {
       setUploading(false);
       setProgress(0);
@@ -102,12 +114,13 @@ const ResumeUpload = () => {
               {uploading ? 'Uploading...' : 'Upload Resume'}
             </button>
             <button 
-              className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-700 ml-2" 
+              className="bg-red-800 text-white px-4 py-1 rounded hover:bg-red-700 ml-2" 
               onClick={handleRemoveFile}
             >
               Remove File
             </button>
             <p>{file.name}</p>
+            <span className={messageColor} >{message}</span>
           </div>
         )}
       </div>

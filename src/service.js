@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ENV } from "./config";
+import ResumeUpload from "./components/ResumeUpload";
 
 async function postData(url, body, headers) {
   try {
@@ -26,6 +27,11 @@ const requestApi = {
            "accept":"text/plain",
         },
       });
+    return r;
+  },
+  resumeUpload: async (body, headers) => {
+    const url = ENV.WEB_URL + `/api/Web/apply`;
+    let r = await postData(url, body, headers);
     return r;
   },
   applyToJob: async (body) => {
