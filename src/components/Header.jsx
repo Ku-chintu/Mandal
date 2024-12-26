@@ -99,7 +99,9 @@ const Header = () => {
           </div>
 
           <div className="hidden lg:flex items-center align-middle space-x-4">
+          <a href="http://mandalsolution.com/" className="">
             <button style={{ width: '127px', marginRight: '61px' }} className='text-primary h-10 text-xl rounded-full flex align-middle items-center justify-center border font-semibold border-primary p-2'>Sign In</button>
+          </a>
           </div>
         </div>
 

@@ -26,13 +26,13 @@ const Footer = () => {
                     <div className="p-4 ">
                         <h5 className='title mb-4'>Services</h5>
                         <h6 className='subtitle mb-4'><a href="/services/#recruitment-as-services"  className='cursor-pointer'>Recruitement as Service</a></h6>
-                        <h6 className='subtitle mb-4'><a href="/services/#applicant-on-demand"  className='cursor-pointer'>Applicant on Demand</a></h6>
+                        <h6 className='subtitle mb-4'><a href="/services/#applicant-on-demand"  className='cursor-pointer'>Talent on Demand</a></h6>
                     </div>
                     <div className="p-4 col-span-2 sm:col-span-1 ">
                         <h5 className='title mb-4'>Solutions</h5>
                         <h6 className='subtitle mb-4'><a href="/solution/#resume-parsing"  className='sm:mb-0 cursor-pointer'>Resume Parsing</a></h6>
                         <h6 className='subtitle mb-4'><a href="/solution/#scoring"  className='sm:mb-0 cursor-pointer'>Scoring</a></h6>
-                        <h6 className='subtitle mb-4'><a href="/solution/#connect"  className='sm:mb-0 cursor-pointer'>Connect</a></h6>
+                        <h6 className='subtitle mb-4'><a href="/solution/#connect"  className='sm:mb-0 cursor-pointer'>Sourcing</a></h6>
                         <h6 className='subtitle mb-4'><a href="/solution/#enrichment"  className='sm:mb-0 cursor-pointer'>Enrichment</a></h6>
                     </div>
                     <div className="p-4 col-span-3 sm:col-span-2 ">
