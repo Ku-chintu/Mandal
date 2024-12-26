@@ -33,9 +33,9 @@ const requestApi = {
       });
     return r;
   },
-  resumeUpload: async (body, headers) => {
+  resumeUpload: async (body, config) => {
     const url = ENV.WEB_URL + `/api/Web/ResumeApply`;
-    let r = await postData(url, body, headers);
+    let r = await postData(url, body, config.headers);
     return r;
   },
   applyToJob: async (body) => {

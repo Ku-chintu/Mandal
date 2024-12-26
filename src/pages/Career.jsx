@@ -10,14 +10,16 @@ function Career() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedJob, setSelectedJob] = useState(null);
-  const [payload, setpayload] = useState({
+  const [searchPayload, setpayload] = useState({
     title: "",
     location: "",
     skills: [""],
     experience: { min: 0, max: 0 },
     from: 0,
-    pagesize: 10,
+    pagesize: 1000,
   });
+
+  const [applyPayload, setApplyPayload] = useState();
 
   useEffect(() => {
     document.title = "Career";
@@ -26,14 +28,14 @@ function Career() {
 
   const handleChange = (event) => {
     setpayload({
-      ...payload,
+      ...searchPayload,
       [event.target.name]: event.target.value,
     });
   };
 
   const fetchJobs = async () => {
     try {
-      const response = await service.requestApi.fetchJobs(payload);
+      const response = await service.requestApi.fetchJobs(searchPayload);
       setTotalJobs(response.data.total);
       setJobs(response.data.jobs);
       if (response.data.jobs.length > 0) {
@@ -46,7 +48,10 @@ function Career() {
       setLoading(false);
     }
   };
-
+  const config = {
+   // JobId : selectedJob.jobId,
+    
+  }
   const getTimeSinceModified = (modifiedDate) => {
     const modified = new Date(modifiedDate);
     const today = new Date();
@@ -59,10 +64,23 @@ function Career() {
     const minutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diffTime % (1000 * 60)) / 1000);
 
-    if (days > 0) return `${days} days`;
-    if (hours > 0) return `${hours} hours`;
-    if (minutes > 0) return `${minutes} minutes`;
-    return `${seconds} seconds`;
+    if (days > 31) {
+      let month = Math.trunc(days / 30);
+      return month > 1 ? `1 month+` : `${month} month`;
+    } 
+    else if (days >= 7) {
+      let month = Math.trunc(days / 7);
+      return month > 1 ? `${month} weeks` : `${month} week`;
+    }
+    else if (days > 0) {
+      return days > 1 ? `${days} days` : `${days} day`;
+    } else if (hours > 0) {
+      return hours > 1 ? `${hours} hours` : `${hours} hour`;
+    } else if (minutes > 0) {
+      return minutes > 1 ? `${minutes} minutes` : `${minutes} minute`;
+    } else {
+      return `few second`;
+    }
   };
 
   const truncateString = (str, maxLength) => {
@@ -141,7 +159,7 @@ function Career() {
               type="text"
               placeholder="Job Title"
               name="title"
-              value={payload.title}
+              value={searchPayload.title}
               onChange={handleChange}
               className="flex-1 border border-primary shadow-sm hover:outline-primary outline-1 rounded px-4 py-2"
             />
@@ -149,7 +167,7 @@ function Career() {
               type="text"
               placeholder="Search Location"
               name="location"
-              value={payload.location}
+              value={searchPayload.location}
               onChange={handleChange}
               className="flex-1 border border-primary shadow-sm hover:outline-primary rounded px-4 py-2"
             />
