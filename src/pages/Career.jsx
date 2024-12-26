@@ -5,6 +5,7 @@ import btnsearch from "../assets/svg/btnsearch.svg";
 import "../assets/css/career.css";
 
 function Career() {
+  const [totalJobs, setTotalJobs] = useState(0);
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -20,8 +21,6 @@ function Career() {
 
   useEffect(() => {
     document.title = "Career";
-    
-
     fetchJobs();
   }, []);
 
@@ -35,6 +34,7 @@ function Career() {
   const fetchJobs = async () => {
     try {
       const response = await service.requestApi.fetchJobs(payload);
+      setTotalJobs(response.data.total);
       setJobs(response.data.jobs);
       if (response.data.jobs.length > 0) {
         setSelectedJob(response.data.jobs[0]); // Set the first job as the default
@@ -46,6 +46,7 @@ function Career() {
       setLoading(false);
     }
   };
+
   const getTimeSinceModified = (modifiedDate) => {
     const modified = new Date(modifiedDate);
     const today = new Date();
@@ -73,15 +74,16 @@ function Career() {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
-const handleSubmit = async (event) => {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       fetchJobs();
-    
     } catch (error) {
       console.error("Error submitting the search:", error);
     }
   };
+
   return (
     <div className="flex flex-col mt-20 -scroll-mt-96 md:flex-row bg-gray-100 h-screen">
       {/* Left Panel */}
@@ -89,7 +91,7 @@ const handleSubmit = async (event) => {
         <h2 className="bg-primary text-gray-300 text-lg font-semibold mb-4 border-b pb-2">
           Best Matches{" "}
           <span className="text-gray-300 text-sm align-middle ml-64 ">
-            {jobs.length} Jobs
+            {totalJobs} Jobs
           </span>
         </h2>
         <div className="space-y-4">
@@ -131,30 +133,33 @@ const handleSubmit = async (event) => {
 
       {/* Right Panel */}
       <div className="w-full md:w-2/3 p-4 overflow-auto">
-      {/* ResumeUpload components */}
+        {/* ResumeUpload components */}
         <ResumeUpload />
         <form onSubmit={handleSubmit}>
-        <div className="flex gap-2 mb-4">
-          <input
-            type="text"
-            placeholder="Job Title"
-            name="title"
-            value={payload.title}
-            onChange={handleChange}
-            className="flex-1 border border-primary shadow-sm hover:outline-primary outline-1 rounded px-4 py-2"
-          />
-          <input
-            type="text"
-            placeholder="Search Location"
-            name="location"
-            value={payload.location}
-            onChange={handleChange}
-            className="flex-1 border border-primary shadow-sm hover:outline-primary rounded px-4 py-2"
-          />
-          <button onClick={handleSubmit} className= "text-white px-4 py-2 rounded hover">
-            <img src={btnsearch} alt="search"/>
-          </button>
-        </div>
+          <div className="flex gap-2 mb-4">
+            <input
+              type="text"
+              placeholder="Job Title"
+              name="title"
+              value={payload.title}
+              onChange={handleChange}
+              className="flex-1 border border-primary shadow-sm hover:outline-primary outline-1 rounded px-4 py-2"
+            />
+            <input
+              type="text"
+              placeholder="Search Location"
+              name="location"
+              value={payload.location}
+              onChange={handleChange}
+              className="flex-1 border border-primary shadow-sm hover:outline-primary rounded px-4 py-2"
+            />
+            <button
+              onClick={handleSubmit}
+              className="text-white px-4 py-2 rounded hover"
+            >
+              <img src={btnsearch} alt="search" />
+            </button>
+          </div>
         </form>
         {selectedJob ? (
           <div className="bg-white p-4 rounded-lg shadow">
