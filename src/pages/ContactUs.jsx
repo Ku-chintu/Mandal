@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import contactBanner from '../assets/svg/contactBanner.svg';
+import service from "../service";
 
 function ContactUs() {
   document.title = 'Contact Us'
@@ -20,10 +21,26 @@ function ContactUs() {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // Handle form submission here
-    console.log(formData);
+    try {
+      //console.log(formData);
+      const response = await service.requestApi.contactUs(formData);
+      if (response.status === 200) {
+        alert("Data submitted successfully!");
+      }
+      else if (response.status === 400) {
+        alert(response.response.data.message);
+      } 
+
+      console.log("Response:", response.data);
+      //alert("ContactUs data submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting the ContactUs:", error);
+      //alert(response);
+    }
+    //console.log(formData);
   };
   return (
     <div style={{ marginTop: '85px' }} className="w-full">

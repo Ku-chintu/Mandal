@@ -15,8 +15,12 @@ async function postData(url, body, headers) {
 
 const requestApi = {
   contactUs: async (body) => {
-    const url = ENV.WEB_URL + `/api/Web/ContactUs`;
-    let r = await postData(url, body);
+    const url = `http://mandalsolution.com/api/Web/ContactUs`;
+    let r = await postData(url, body, {
+      headers: {
+         "Content-Type": "application/json"
+      },
+    });
     return r;
   },
   fetchJobs: async (body) => {
