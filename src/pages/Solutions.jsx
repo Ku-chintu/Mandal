@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import solutionSec1 from '../assets/svg/solutionSec1.svg';
-import solutionSec2 from '../assets/svg/solutionSec2.svg';
-import solutionSec3 from '../assets/svg/solutionSec3.svg';
-import solutionSec4 from '../assets/svg/solutionSec4.svg';
+import solutionSec1 from '../assets/svg/resumeParser.svg';
+import solutionSec2 from '../assets/svg/jdParser.svg';
+import solutionSec3 from '../assets/svg/scoring.svg';
+import solutionSec4 from '../assets/svg/sourcing.svg';
 import sec2Group from '../assets/svg/sec2Group.svg';
 import sec2top from '../assets/svg/sec2top.svg';
+import enrichment from '../assets/svg/enrichment_new.svg';
 
 function Services() {
     document.title = 'Solutions'
@@ -141,8 +142,7 @@ function Services() {
                 </div>
                 <div className='relative flex justify-center align-middle items-center sm:px-18 lg:px-28 mt-20'>
                     <div className=' '>
-                        image here
-                        {/* <img  src={solutionSec1} alt="solutionSec1" className=" bg-white  pb-4  w-full " /> */}
+                        <img  src={enrichment} alt="solutionSec1" className=" bg-white  pb-4  w-full " />
                         <img src={sec2Group} alt="image1" className=" w-96 h-auto absolute -bottom-20 right-0" />
                     </div>
                 </div>
