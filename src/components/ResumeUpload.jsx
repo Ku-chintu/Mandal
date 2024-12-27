@@ -72,9 +72,9 @@ const ResumeUpload = () => {
         ref={fileInputRef}
         style={{ display: "none" }}
         onChange={handleFileChange}
-        accept=".pdf,.doc,.docx"
+        accept=".pdf,.doc,.docx,.rtf"
       />
-      <p className="font-normal text-xs">Accepted formats: PDF, DOC, DOCX</p>
+      <p className="font-normal text-xs">Accepted formats: pdf, doc, docx, rtf</p>
       <ToastContainer position="top-right" autoClose={3000} />
       </div>
     </div>

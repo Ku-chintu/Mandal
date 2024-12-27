@@ -65,14 +65,14 @@ const ApplyResumeUpload = ({ jobId }) => {
         onClick={handleUploadClick}
       >
         Apply Now
-        <p style={{fontSize:'4px'}} >pdf, doc, docx</p>
+        <p style={{fontSize:'4px'}} >pdf, doc, docx, rtf</p>
       </button>
       <input
         type="file"
         ref={fileInputRef}
         style={{ display: "none" }}
         onChange={handleFileChange}
-        accept=".pdf,.doc,.docx"
+        accept=".pdf,.doc,.docx,.rtf"
       />
       {/* <p className="font-normal text-xs">Accepted formats: PDF, DOC, DOCX</p> */}
       <ToastContainer position="top-right" autoClose={3000} />

@@ -90,7 +90,10 @@ function Career() {
     }
     return str;
   };
-
+  const handleExperience = (min, max) =>{
+    if(min <= 0 && max <= 0) return '0-5 Years';
+    else{return min + '-' + max + 'Years'};
+  };
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
@@ -102,6 +105,7 @@ function Career() {
       console.error("Error submitting the search:", error);
     }
   };
+  
 
   return (
     <div className="flex flex-col mt-20 -scroll-mt-96 md:flex-row bg-gray-100 h-screen">
@@ -122,27 +126,27 @@ function Career() {
                 selectedJob === job ? "border-primary" : ""
               }`}
             >
-              <h3 className="text-md font-medium">{job.jobTitle || "N/A"}</h3>
-              <p className="text-sm text-gray-500">{job.company || "N/A"}</p>
+              <h3 className="text-md font-medium">{job.jobTitle}
+              <p className="text-sm text-gray-500">{job.company}</p></h3>
               <div className="flex flex-wrap gap-2 my-2">
                 <span className="bg-gray-200 text-sm px-2 py-1 rounded">
-                  {job.location || "N/A"}
+                  {job.location}
                 </span>
-                <span className="bg-gray-200 text-sm px-2 py-1 rounded">{`${
-                  job.totalExpMin || 0
-                } Years`}</span>
                 <span className="bg-gray-200 text-sm px-2 py-1 rounded">
+                {handleExperience(job.totalExpMin,job.totalExpMax)}</span>
+                {/* <span className="bg-gray-200 text-sm px-2 py-1 rounded">
                   {job.jobType || "N/A"}
-                </span>
+                </span> */}
               </div>
               <p className="text-sm text-gray-600">
                 {truncateString(job.jobDesc, 115) ||
                   "No description available."}
               </p>
               <div className="text-xs text-gray-400 mt-2 flex justify-between">
-                <span>{`${job.applications || 0} Applications`}</span>
-                <span>{`Posted ${
-                  getTimeSinceModified(job.modifiedDate) || "N/A"
+                {/* <span>{`${job.applications || 0} Applications`}</span> */}
+                <div></div>
+                <span className="float-end">{`Posted ${
+                  getTimeSinceModified(job.modifiedDate)
                 } ago`}</span>
               </div>
             </div>
@@ -153,7 +157,7 @@ function Career() {
       {/* Right Panel */}
       <div className="w-full md:w-2/3 p-4 overflow-auto">
         {/* ResumeUpload components */}
-        <ResumeUpload />
+        {/* <ResumeUpload /> */}
         <form onSubmit={handleSubmit}>
           <div className="flex gap-2 mb-4">
             <input
@@ -166,7 +170,7 @@ function Career() {
             />
             <input
               type="text"
-              placeholder="Search Location"
+              placeholder="Location"
               name="location"
               value={searchPayload.location}
               onChange={handleChange}
@@ -183,25 +187,27 @@ function Career() {
         {selectedJob ? (
           <div className="bg-white p-4 rounded-lg shadow">
             <h3 className="text-lg font-semibold mb-2">
-              {selectedJob.jobTitle || "N/A"}
+              {selectedJob.jobTitle}
+              <p className="text-sm text-gray-500">
+              {selectedJob.company}
+            </p>
             </h3>
+            
             {/* <button className="flex-1 bg-primary text-white px-4 py-2 rounded hover:bg-green-900 mb-4">
               Apply Now
             </button> */}
             <ApplyResumeUpload jobId={selectedJob.jobId}/>
-            <p className="text-sm text-gray-500">
-              {selectedJob.company || "N/A"}
-            </p>
+            
             <div className="flex flex-wrap gap-2 my-2">
               <span className="bg-gray-200 text-sm px-2 py-1 rounded">
-                {selectedJob.location || "N/A"}
+                {selectedJob.location}
               </span>
-              <span className="bg-gray-200 text-sm px-2 py-1 rounded">{`${
-                selectedJob.totalExpMin || 0
-              } Years`}</span>
               <span className="bg-gray-200 text-sm px-2 py-1 rounded">
-                {selectedJob.jobType || "N/A"}
-              </span>
+                 {handleExperience(selectedJob.totalExpMin,selectedJob.totalExpMax)}
+                 </span>
+              {/* <span className="bg-gray-200 text-sm px-2 py-1 rounded">
+                {selectedJob.jobType}
+              </span> */}
             </div>
 
             <div>
