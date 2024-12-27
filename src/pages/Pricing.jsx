@@ -59,7 +59,7 @@ function Pricing() {
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={Cancel} alt="Cancel" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Connect</p>
+                <p className=' font-medium text-lg'>Sourcing</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={Cancel} alt="Cancel" className="rounded-icon" />
@@ -67,7 +67,7 @@ function Pricing() {
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={Cancel} alt="Cancel" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Applicant on Demand</p>
+                <p className=' font-medium text-lg'>Talent on Demand</p>
               </div>
             </div>
             <div className='p-4'>
@@ -96,7 +96,7 @@ function Pricing() {
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Connect</p>
+                <p className=' font-medium text-lg'>Sourcing</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={Cancel} alt="Cancel" className="rounded-icon" />
@@ -104,7 +104,7 @@ function Pricing() {
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={Cancel} alt="Cancel" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Applicant on Demand</p>
+                <p className=' font-medium text-lg'>Talent on Demand</p>
               </div>
             </div>
             <div className='p-4'>
@@ -132,7 +132,7 @@ function Pricing() {
               </div>
               <div className='flex items-center gap-4 mb-4'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Connect</p>
+                <p className=' font-medium text-lg'>Sourcing</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
@@ -140,7 +140,7 @@ function Pricing() {
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Applicant on Demand</p>
+                <p className=' font-medium text-lg'>Talent on Demand</p>
               </div>
             </div>
             <div className='p-4'>
