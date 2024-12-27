@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SubscribeForUpdate from '../components/SubscribeForUpdates';
 import Linkedin from '../assets/svg/Linkedin 2.svg';
 import Facebook from '../assets/svg/Facebook F.svg';
 import Instagram from '../assets/svg/Instagram.svg';
@@ -42,21 +43,7 @@ const Footer = () => {
                         <h6 className='subtitle mb-4'><a href="/career"  className='sm:mb-0 cursor-pointer'>Careers</a></h6>
                         <h6 className='subtitle mb-4'><a href="/pricing"  className='sm:mb-0 cursor-pointer'>Pricing</a></h6>
                     </div>
-                    <div className=" p-4 col-span-4 sm:col-span-3">
-                        <h5 className='title mb-4'>Subscribe for Updates</h5>
-                        <h6 className='subtitle mb-4'>Recruitment strategy tips, guides, videos, and live Q&As delivered right to your inbox.</h6>
-                        <div className="">
-                            <div className=" flex rounded-full h-12 w-full">
-                                <input type="email" className=" bg-white rounded-l-full  text-sm w-3/4 sm:w-2/4  pl-3 pr-16 py-2  " placeholder="Enter Email ID" />
-                                <button
-                                    className=" rounded bg-iconBg py-2 px-2.5 rounded-r-full text-center w-1/4  text-sm text-white "
-                                    type="button"
-                                >
-                                    Subscribe
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <SubscribeForUpdate/>
                 </div>
                 <div className='p-4'>
                     <p className=' text-center text-white text-base'>© 2024 mAI. All rights reserved. <a href="/PrivacyPolicy" className="">Privacy Policy | </a><a href="/TermsOfUse" className="">Terms of Service.</a></p>

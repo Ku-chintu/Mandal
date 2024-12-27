@@ -4,7 +4,7 @@ import ResumeUpload from "./components/ResumeUpload";
 
 async function postData(url, body, headers) {
   try {
-    let _r = await axios.post(url, body);
+    let _r = await axios.post(url, body, headers);
     return _r;
   } catch (e) {
     console.log(e);
@@ -34,7 +34,6 @@ const requestApi = {
     return r;
   },
   resumeUpload: async (body, config) => {
-    debugger;
     let url = ENV.WEB_URL + `/api/Web/ResumeApply` + (config.jobId > 0 ? `?jobid=`+ config.jobId   : '');
     let r = await postData(url, body, config.headers);
     return r;
@@ -42,6 +41,15 @@ const requestApi = {
   applyToJob: async (body) => {
     const url = ENV.WEB_URL + `/api/Web/Apply`;
     let r = await postData(url, body);
+    return r;
+  },
+  subscribeForUpdate: async (body) => {
+    const url = ENV.WEB_URL + `/api/Web/Subscribe`;
+    let r = await postData(url, body, {
+      headers: {
+         "Content-Type": "application/json"
+      },
+    });
     return r;
   },
   
