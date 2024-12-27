@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ResumeUpload from "../components/ResumeUpload";
+import ApplyResumeUpload from "../components/ApplyResumeUpload";
 import service from "../service";
 import btnsearch from "../assets/svg/btnsearch.svg";
 import "../assets/css/career.css";
@@ -184,9 +185,10 @@ function Career() {
             <h3 className="text-lg font-semibold mb-2">
               {selectedJob.jobTitle || "N/A"}
             </h3>
-            <button className="flex-1 bg-primary text-white px-4 py-2 rounded hover:bg-green-900 mb-4">
+            {/* <button className="flex-1 bg-primary text-white px-4 py-2 rounded hover:bg-green-900 mb-4">
               Apply Now
-            </button>
+            </button> */}
+            <ApplyResumeUpload jobId={selectedJob.jobId}/>
             <p className="text-sm text-gray-500">
               {selectedJob.company || "N/A"}
             </p>

@@ -34,7 +34,8 @@ const requestApi = {
     return r;
   },
   resumeUpload: async (body, config) => {
-    const url = ENV.WEB_URL + `/api/Web/ResumeApply`;
+    debugger;
+    let url = ENV.WEB_URL + `/api/Web/ResumeApply` + (config.jobId > 0 ? `?jobid=`+ config.jobId   : '');
     let r = await postData(url, body, config.headers);
     return r;
   },
