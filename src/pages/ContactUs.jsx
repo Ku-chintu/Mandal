@@ -29,7 +29,7 @@ function ContactUs() {
       //console.log(formData);
       const response = await service.requestApi.contactUs(formData);
       if (response.status === 200) {
-        toast.error("Data submitted successfully!");
+        toast.success("Data submitted successfully!");
       }
       else if (response.status === 400) {
         toast.error(response.response.data.message);
