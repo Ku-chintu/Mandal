@@ -7,8 +7,8 @@ import sec2top from '../assets/svg/sec2top.svg';
 function Services() {
     document.title = 'Services'
     return (
-        <div style={{marginTop: '85px'}} className="w-full p-4 container m-auto">
-            <section id='recruitment-as-services' className=' xl:grid grid-cols-2 pb-8 xl:pb-44 mt-12'>
+        <div className="w-full p-4 container m-auto">
+            <section id='recruitment-as-services' className=' xl:grid grid-cols-2 pb-8 xl:pb-44'>
               
                 <div className='flex md:justify-center align-middle items-center px-4 md:px-12 lg:px-24 relative'>
                     <div className=''>
@@ -31,7 +31,7 @@ function Services() {
                     <img src={sec2Group} alt="image1" className="hidden xl:block w-96 h-auto absolute -bottom-72 right-0" />
                 </div>
             </section>
-            <section id='applicant-on-demand' className=' xl:grid grid-cols-2 pb-44 mt-44'>
+            <section id='applicant-on-demand' className=' xl:grid grid-cols-2 pb-44'>
                 <div className='relative'>
                     <div className=' mb-8 mt-0 xl:mb-14 xl:mt-32'>
                         <h1 className='heading-2 font-bold'>Connecting You with the Right Opportunities, On Demand.</h1>

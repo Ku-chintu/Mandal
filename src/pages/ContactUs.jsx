@@ -29,14 +29,19 @@ function ContactUs() {
       //console.log(formData);
       const response = await service.requestApi.contactUs(formData);
       if (response.status === 200) {
-        toast.success("Data submitted successfully!", {
-          autoClose: 10000, // Closes after 5 seconds
+        toast.success("Data submitted successfully!");
+        setFormData({
+          fullName: '',
+          companyName: '',
+          workEmail: '',
+          phoneNumber: '',
+          seniorityLevel: '',
+          description: '',
+          message: '',
         });
       }
       else if (response.status === 400) {
-        toast.error(response.response.data.message, {
-          autoClose: 10000, // Closes after 5 seconds
-        });
+        toast.error(response.response.data.message);
       } 
 
       console.log("Response:", response.data);
@@ -183,7 +188,7 @@ function ContactUs() {
           {/* </div> */}
         </section>
       </div>
-      <ToastContainer position="top-right" autoClose={3000} />
+      <ToastContainer position="top-right" autoClose={1000} />
     </div>
   );
 }

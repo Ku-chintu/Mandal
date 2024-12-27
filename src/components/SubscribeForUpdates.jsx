@@ -23,6 +23,7 @@ function SubscribeForUpdate() {
     const response = await service.requestApi.subscribeForUpdate('"'+email+'"');
     if(response.status === 200){ 
         toast.success(`Successfuly subscribed!`);
+        setEmail('');
     }
     else{
          toast.error(`Failed to subscribe!`);
