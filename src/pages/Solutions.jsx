@@ -19,8 +19,8 @@ function Services() {
         }
     }, []);
     return (
-        <div style={{marginTop: '85px'}} className="w-full p-4 container m-auto">
-            <section id='resume-parsing' className=' xl:grid grid-cols-2 pb-8 xl:pb-20 mt-12'>
+        <div className="w-full p-4 container m-auto">
+            <section id='resume-parsing' className=' xl:grid grid-cols-2 pb-8 xl:pb-20'>
 
                 <div className='hidden xl:flex md:justify-center align-middle items-center px-4 md:px-12 lg:px-24 relative'>
                     <div className=''>
