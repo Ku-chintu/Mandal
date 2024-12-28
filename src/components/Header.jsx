@@ -48,7 +48,7 @@ const Header = () => {
 
   return (
     <header style={{ height: '85px' }} className="w-full fixed z-50 top-0 bg-white">
-      <div className='container m-auto h-full bg-white'>
+      <div className='container m-auto h-full bg-white px-5'>
         <div className="mx-auto flex justify-between items-center p-4 text-primary h-full">
           <a href="/" style={{ height: '52px', maxWidth: '52px', minWidth: '52px' }} className='bg-primary text-base text-white flex justify-center align-middle items-center rounded-full'>
             <div>mAI</div>

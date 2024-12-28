@@ -17,7 +17,7 @@ function App() {
     <div className=" font-inter text-primary">
       <Header />
       <Router>
-        {/* <div style={{marginTop: '85px'}} className="w-full p-4 container m-auto"> */}
+        <div className="px-5">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/platforms" element={<PlatForms />} />
@@ -31,7 +31,7 @@ function App() {
             <Route path="/TermsOfUse" element={<TermsOfUse />} />
            
           </Routes>
-        {/* </div> */}
+        </div>
       </Router>
       <Footer />
     </div>
