@@ -40,6 +40,7 @@ function SubscribeForUpdate() {
       <div className="">
         <div className=" flex rounded-full h-12 w-full">
           <input
+            name = "subscriberemail"
             type="email"
             className=" bg-white text-black rounded-l-full  text-sm w-3/4 sm:w-2/4  pl-3 pr-16 py-2  "
             placeholder="Enter Email ID"

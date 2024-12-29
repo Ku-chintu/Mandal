@@ -58,12 +58,12 @@ function Home() {
     <div className="w-full p-4 container m-auto">
       <section className=' xl:grid grid-cols-2 pb-44 mt-12'>
         <div>
-          <div className=' mb-8 mt-0 xl:mb-14 xl:mt-20'>
+          <div className=' mb-8 mt-0 py-3.5 xl:mb-0 xl:mt-20'>
             <h1 className='heading-1 font-bold'>AI powered solution</h1>
             <p className='heading-1 font-medium'>delivering top talent</p>
           </div>
           <div className='mb-14'>
-            <p className='p-text'>Streamline hiring and boost talent quality with an all-in-one platform for AI, CRM, sourcing,analytics, and automation.</p>
+            <p className='p-text'>Streamline hiring and boost talent quality with an all-in-one platform.</p>
           </div>
           <div>
           <a href="/contactus"  className='sm:mb-0 cursor-pointer'>
@@ -76,10 +76,10 @@ function Home() {
             <img src={landingPage} alt="image1"/>
 
             <div className=' absolute top-1/4 sm:top-1/4 -right-10 sm:-right-28 md:-right-32'>
-              <div className=' h-12 w-44  sm:h-16  sm:w-52 p-4 bg-white shadow-2xl rounded-xl mb-2 sm:mb-4 text-sm sm:text-xl font-medium items-center flex justify-center text-center'>Transform TA</div>
-              <div className=' h-12 w-44  sm:h-16  sm:w-52 p-4 bg-white shadow-2xl rounded-xl mb-2 sm:mb-4 text-sm sm:text-xl font-medium items-center flex justify-center text-center'>Save Time </div>
-              <div className=' h-12 w-44  sm:h-16  sm:w-52 p-4 bg-white shadow-2xl rounded-xl mb-2 sm:mb-4 text-sm sm:text-xl font-medium items-center flex justify-center text-center'>Optimize</div>
-              <div className=' h-12 w-44  sm:h-16  sm:w-52 p-4 bg-white shadow-2xl rounded-xl mb-2 sm:mb-4 text-sm sm:text-xl font-medium items-center flex justify-center text-center'>Increase Talent Quality</div>
+              <div className=' h-12 w-44  sm:h-16  sm:w-52 p-4 bg-white shadow-2xl rounded-xl mb-2 sm:mb-4 text-sm sm:text-xl font-medium items-center flex justify-center text-center'>Automation</div>
+              <div className=' h-12 w-44  sm:h-16  sm:w-52 p-4 bg-white shadow-2xl rounded-xl mb-2 sm:mb-4 text-sm sm:text-xl font-medium items-center flex justify-center text-center'>Efficiency</div>
+              <div className=' h-12 w-44  sm:h-16  sm:w-52 p-4 bg-white shadow-2xl rounded-xl mb-2 sm:mb-4 text-sm sm:text-xl font-medium items-center flex justify-center text-center'>Insights</div>
+              <div className=' h-12 w-44  sm:h-16  sm:w-52 p-4 bg-white shadow-2xl rounded-xl mb-2 sm:mb-4 text-sm sm:text-xl font-medium items-center flex justify-center text-center'>Personalization</div>
             </div>
           </div>
         </div>

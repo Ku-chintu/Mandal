@@ -39,7 +39,7 @@ const Footer = () => {
                     <div className="p-4 col-span-3 sm:col-span-2 ">
                         <h5 className='title mb-4'>Company</h5>
                         <h6 className='subtitle mb-4'><a href="/contactus"  className='sm:mb-0 cursor-pointer'>Contact Us</a></h6>
-                        <h6 className='subtitle mb-4'><a href="/resources"  className='sm:mb-0 cursor-pointer'>Resources</a></h6>
+                        {/* <h6 className='subtitle mb-4'><a href="/resources"  className='sm:mb-0 cursor-pointer'>Resources</a></h6> */}
                         <h6 className='subtitle mb-4'><a href="/career"  className='sm:mb-0 cursor-pointer'>Careers</a></h6>
                         <h6 className='subtitle mb-4'><a href="/pricing"  className='sm:mb-0 cursor-pointer'>Pricing</a></h6>
                     </div>

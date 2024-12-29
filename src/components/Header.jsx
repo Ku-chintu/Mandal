@@ -67,9 +67,9 @@ const Header = () => {
               <a href="/career" className="">
                 Careers
               </a>
-              <a href="/resources" className="">
+              {/* <a href="/resources" className="">
                 Resources
-              </a>
+              </a> */}
               <a href="/contactus" className="">
                 Contact Us
               </a>
