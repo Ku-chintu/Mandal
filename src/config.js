@@ -1,4 +1,4 @@
 export const ENV = {
-    WEB_URL: "http://mandalsolution.com"
+    WEB_URL: "https://app.mandalsolution.com"
   };
   
