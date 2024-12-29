@@ -208,13 +208,15 @@ function Career() {
               {/* <span className="bg-gray-200 text-sm px-2 py-1 rounded">
                 {selectedJob.jobType}
               </span> */}
-            </div>
+            {/* </div> */}
 
-            <div>
+            {/* <div>
               <h4 className="font-semibold text-md mb-2">Job Description:</h4>
               <p className="text-sm text-gray-600 mb-4">
                 {selectedJob.jobDesc || "No description available."}
               </p>
+            </div> */}
+              <div dangerouslySetInnerHTML={{ __html: selectedJob.jobDesc }} />
             </div>
           </div>
         ) : (
