@@ -4,6 +4,7 @@ import ApplyResumeUpload from "../components/ApplyResumeUpload";
 import service from "../service";
 import btnsearch from "../assets/svg/btnsearch.svg";
 import "../assets/css/career.css";
+import DOMPurify from 'dompurify';
 
 function Career() {
   const [totalJobs, setTotalJobs] = useState(0);
@@ -186,25 +187,94 @@ function Career() {
         </form>
         {selectedJob ? (
           <div className="bg-white p-4 rounded-lg shadow">
-            <h3 className="text-lg font-semibold mb-2">
+            {/* <h3 className="text-lg font-semibold mb-2">
               {selectedJob.jobTitle}
               <p className="text-sm text-gray-500">
               {selectedJob.company}
             </p>
-            </h3>
+            </h3> */}
             
             {/* <button className="flex-1 bg-primary text-white px-4 py-2 rounded hover:bg-green-900 mb-4">
               Apply Now
             </button> */}
             <ApplyResumeUpload jobId={selectedJob.jobId}/>
-            
-            <div className="flex flex-wrap gap-2 my-2">
+
+                  <h1 className="text-2xl font-bold text-gray-800 mb-4">
+                        {selectedJob.jobTitle}
+                  </h1>
+                  <p className="text-gray-600 mb-2">
+                    <span className="font-medium">Company:</span> {selectedJob.company}
+                  </p>
+                  <p className="text-gray-600 mb-2">
+                    <span className="font-medium">Location:</span> {selectedJob.location}
+                  </p>
+                  <p className="text-gray-600 mb-2">
+                    <span className="font-medium">Employment Type:</span>{" "}
+                    {selectedJob.employmentType}
+                  </p>
+                  <p className="text-gray-600 mb-6">
+                    <span className="font-medium">Experience:</span>{" "}
+                    {selectedJob.totalExpMin}-{selectedJob.totalExpMax} years
+                  </p>
+                  <h2 className="text-2xl font-semibold text-gray-700 mb-3">About Us</h2>
+                  <p className="text-gray-600 mb-6">{selectedJob.aboutUs}</p>
+                  <h2 className="text-2xl font-semibold text-gray-700 mb-3">
+                    Job Description
+                  </h2>
+                  <p className="text-gray-600 mb-6">{selectedJob.jobDesc}</p>
+
+                  <h2 className="text-2xl font-semibold text-gray-700 mb-3">
+                    Roles & Responsibilities
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                  {selectedJob.rolesResponsibilities.map((role, index) => (
+                    <li key={index} className="text-gray-600">
+                      {role}
+                    </li>
+                  ))}
+                  </ul>
+
+                  <h2 className="text-2xl font-semibold text-gray-700 mb-3">
+                    Required Skills & Qualifications
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    {selectedJob.requiredSkillsQualifications.map((skill, index) => (
+                      <li key={index} className="text-gray-600">
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <h2 className="text-2xl font-semibold text-gray-700 mb-3">
+                    Preferred Qualifications
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    {selectedJob.preferredQualifications.map((qualification, index) => (
+                      <li key={index} className="text-gray-600">
+                        {qualification}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <h2 className="text-2xl font-semibold text-gray-700 mb-3">Benefits</h2>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    {selectedJob.benefits.map((benefit, index) => (
+                      <li key={index} className="text-gray-600">
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <ApplyResumeUpload jobId={selectedJob.jobId}/>
+
+
+            {/* <div className="flex flex-wrap gap-2 my-2">
               <span className="bg-gray-200 text-sm px-2 py-1 rounded">
                 {selectedJob.location}
               </span>
               <span className="bg-gray-200 text-sm px-2 py-1 rounded">
                  {handleExperience(selectedJob.totalExpMin,selectedJob.totalExpMax)}
-                 </span>
+                 </span> */}
               {/* <span className="bg-gray-200 text-sm px-2 py-1 rounded">
                 {selectedJob.jobType}
               </span> */}
@@ -216,8 +286,8 @@ function Career() {
                 {selectedJob.jobDesc || "No description available."}
               </p>
             </div> */}
-              <div dangerouslySetInnerHTML={{ __html: selectedJob.jobDesc }} />
-            </div>
+              {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(selectedJob.jobDesc) }} /> */}
+            {/* </div> */}
           </div>
         ) : (
           <div className="text-center text-gray-500">
