@@ -32,10 +32,9 @@ function SubscribeForUpdate() {
 
   return (
     <div className=" p-4 col-span-4 sm:col-span-3">
-      <h5 className="title mb-4">Subscribe for Updates</h5>
+      <h5 className="title mb-4"></h5>
       <h6 className="subtitle mb-4">
-        Recruitment strategy tips, guides, videos, and live Q&As delivered right
-        to your inbox.
+      Want to know what's new? Stay updated with our regular updates and insights
       </h6>
       <div className="">
         <div className=" flex rounded-full h-12 w-full">

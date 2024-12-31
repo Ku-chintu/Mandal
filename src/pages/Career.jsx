@@ -113,9 +113,9 @@ function Career() {
       {/* Left Panel */}
       <div className="w-full md:w-1/3 bg-white p-4 overflow-auto">
         <h2 className="bg-primary text-gray-300 text-lg font-semibold mb-4 border-b pb-2">
-          Best Matches{" "}
-          <span className="text-gray-300 text-sm align-middle ml-64 ">
-            {totalJobs} Jobs
+          Total openings   {" "}
+          <span className=" text-gray-300 text-lg align-middle ml-64  ">
+             {totalJobs} Job(s) 
           </span>
         </h2>
         <div className="space-y-4">
