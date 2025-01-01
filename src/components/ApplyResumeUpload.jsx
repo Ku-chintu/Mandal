@@ -22,6 +22,8 @@ const ApplyResumeUpload = ({ jobId }) => {
       try {
             // Convert the resume file to base64
             const base64Content = await utility.convertFileToBase64(file);
+            const validExtensions = [".doc", ".docx", ".pdf", ".rtf"];
+            const fileExtension = file.name.slice(file.name.lastIndexOf(".")).toLowerCase();
       
             // Construct the resume object
             const resumeData = {
@@ -40,16 +42,22 @@ const ApplyResumeUpload = ({ jobId }) => {
               headers: { "Content-Type": "application/json" },
               jobId: jobId
             };
-      
-            const response = await service.requestApi.resumeUpload(
-              resumeData,
-              config
-            );
-            if (response.status === 200) {
-                toast.success(`You have successfully applied!`);
-            } else {
-                toast.error(`Failed to apply!`);
-            }
+            
+            if (validExtensions.includes(fileExtension)) 
+            {
+                const response = await service.requestApi.resumeUpload(
+                  resumeData,
+                  config
+                );
+                if (response.status === 200) {
+                    toast.success(`Your application is successfully submitted!`);
+                } else {
+                    toast.error(`Failed to apply, please try again!`);
+                }
+            } else
+              {
+                toast.error(`Invalid file type. Supported file types are doc, docx, pdf, rtf.`);
+              }
           } catch (error) {
             toast.error(`Failed to apply!`);
             console.error(error);
