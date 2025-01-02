@@ -140,7 +140,7 @@ function ContactUs() {
                   <option value="">Mid-Level</option>
                   <option value="">Manager</option>
                   <option value="">Director</option>
-                  <option value="">Founder/Owner</option>
+                  <option value="">Founder</option>
                 </select>
               </div>
 
@@ -155,11 +155,10 @@ function ContactUs() {
                   onChange={handleChange}
                   className="mt-1 p-2 w-full border border-primary rounded-md shadow-sm outline-none"
                 >
-                  <option value="">Sofware Engineer</option>
-                  <option value="">Data Analyst</option>
+                  <option value="">Talent specialist</option>
+                  <option value="">Hiring manager</option>
                   <option value="">Hr Manager</option>
-                  <option value="">Quality Assurance Engineer</option>
-                  <option value="">IT Support Specialist</option>
+                  <option value="">Other</option>
                 </select>
               </div>
 
