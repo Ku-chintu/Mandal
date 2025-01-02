@@ -152,8 +152,8 @@ const Header = () => {
             <a href="/pricing" className="hover:bg-gray-300 rounded-md p-2" onClick={toggleDrawer}>Pricing</a>
             <a href="/career" className="hover:bg-gray-300 rounded-md p-2" onClick={toggleDrawer}>Career</a>
             <a href="/resources" className="hover:bg-gray-300 rounded-md p-2" onClick={toggleDrawer}>Resources</a>
-            <a href="/contact" className="hover:bg-gray-300 rounded-md p-2" onClick={toggleDrawer}>Contact Us</a>
-            <a href="/contact" className="hover:bg-gray-300 rounded-md p-2" onClick={toggleDrawer}>Sign In</a>
+            <a href="/contactus" className="hover:bg-gray-300 rounded-md p-2" onClick={toggleDrawer}>Contact Us</a>
+            <a href="/contactus" className="hover:bg-gray-300 rounded-md p-2" onClick={toggleDrawer}>Sign In</a>
           </nav>
         </div>
 
