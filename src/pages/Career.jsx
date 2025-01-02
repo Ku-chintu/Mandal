@@ -115,7 +115,7 @@ function Career() {
         <h2 className="bg-primary text-gray-300 text-lg font-semibold mb-4 border-b pb-2">
           Total openings   {" "}
           <span className=" text-gray-300 text-lg align-middle ml-64  ">
-             {totalJobs} Job(s) 
+             {totalJobs}  
           </span>
         </h2>
         <div className="space-y-4">

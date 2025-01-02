@@ -47,19 +47,19 @@ function Pricing() {
               <p className='mb-2 text-base font-semibold'>Features</p>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Resume Parsing</p>
+                <p className=' font-medium text-lg'>Resume Parser</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Job Description Parsing</p>
+                <p className=' font-medium text-lg'>Job Parser</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Scoring</p>
+                <p className=' font-medium text-lg'>Sourcing</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={Cancel} alt="Cancel" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Sourcing</p>
+                <p className=' font-medium text-lg'>Scoring</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={Cancel} alt="Cancel" className="rounded-icon" />
@@ -84,19 +84,19 @@ function Pricing() {
               <p className='mb-2 text-base font-semibold'>Features</p>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Resume Parsing</p>
+                <p className=' font-medium text-lg'>Resume Parser</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Job Description Parsing</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Scoring</p>
+                <p className=' font-medium text-lg'>Job Parser</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
                 <p className=' font-medium text-lg'>Sourcing</p>
+              </div>
+              <div className='flex items-center gap-4 mb-2'>
+                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
+                <p className=' font-medium text-lg'>Scoring</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={Cancel} alt="Cancel" className="rounded-icon" />
@@ -120,27 +120,27 @@ function Pricing() {
               <p className='mb-2 text-base font-semibold'>Features</p>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Resume Parsing</p>
+                <p className=' font-medium text-lg'>All in Premium Plan</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Job Description Parsing</p>
+                <p className=' font-medium text-lg'>ATS integration</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Scoring</p>
+                <p className=' font-medium text-lg'>SSO</p>
               </div>
               <div className='flex items-center gap-4 mb-4'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Sourcing</p>
+                <p className=' font-medium text-lg'>Career site</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Enrichment</p>
+                <p className=' font-medium text-lg'>Job publish</p>
               </div>
               <div className='flex items-center gap-4 mb-2'>
                 <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Talent on Demand</p>
+                <p className=' font-medium text-lg'>Custom development</p>
               </div>
             </div>
             <div className='p-4'>
