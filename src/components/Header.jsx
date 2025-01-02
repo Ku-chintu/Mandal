@@ -31,10 +31,17 @@ const Header = () => {
         handleOutsideClick();
       }
     };
-
+    const handleEscapeKey = (event) => {
+      if (event.key === 'Escape') {
+        setPopupOpen(false);
+        setDrawerOpen(false);
+      }
+    };
     document.addEventListener('mousedown', handleClick);
+    document.addEventListener('keydown', handleEscapeKey);
     return () => {
       document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener('keydown', handleEscapeKey);
     };
   }, []);
 
