@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import platformsec1 from '../assets/svg/platform-sec1.svg';
 import platformsec2 from '../assets/svg/platform-sec2.svg';
 import sec2Group from '../assets/svg/sec2Group.svg';
@@ -6,6 +6,15 @@ import sec2top from '../assets/svg/sec2top.svg';
 
 function Services() {
     document.title = 'Services'
+    useEffect(() => {
+            const hash = window.location.hash;
+            if (hash) {
+                const element = document.querySelector(hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }, []);
     return (
         <div className="w-full p-4 container m-auto">
             <section id='recruitment-as-services' className=' xl:grid grid-cols-2 pb-8 xl:pb-44'>
