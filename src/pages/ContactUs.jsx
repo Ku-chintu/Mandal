@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import contactBanner from '../assets/svg/contactBanner.svg';
 import service from "../service";
 
@@ -30,6 +31,9 @@ function ContactUs() {
       const response = await service.requestApi.contactUs(formData);
       if (response.status === 200) {
         toast.success("Data submitted successfully!");
+       
+      }
+      else if (response.status === 400) {
         setFormData({
           fullName: '',
           companyName: '',
@@ -39,8 +43,6 @@ function ContactUs() {
           description: '',
           message: '',
         });
-      }
-      else if (response.status === 400) {
         toast.error(response.response.data.message);
       } 
 
@@ -187,7 +189,7 @@ function ContactUs() {
           {/* </div> */}
         </section>
       </div>
-      <ToastContainer position="top-right" autoClose={1000} />
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 }
