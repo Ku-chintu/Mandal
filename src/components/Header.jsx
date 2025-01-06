@@ -231,7 +231,7 @@ const Header = () => {
                         </div>
                         <p className='mb-4 sm:mb-0 text-xs'>Automate and streamline job description creation with AI-powered parsing. Enhance recruitment efficiency with accurate, structured data extraction.</p>
                       </a>
-                      <a href="/solution/#connect"  className='sm:mb-0 cursor-pointer'>
+                      <a href="/solution/#sourcing"  className='sm:mb-0 cursor-pointer'>
                       {/* <div className='mb-4 sm:mb-0 cursor-pointer' onClick={() => handleRedirect('/solutions/#connect')}> */}
                         <div className='flex items-center gap-4 mb-4'>
                           <img src={connect} alt="connect" className="w-8 h-8" />
