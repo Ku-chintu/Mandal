@@ -11,9 +11,9 @@ const Footer = () => {
             <div className=' container m-auto px-5'>
                 <div className='flex gap-4 justify-end p-4'>
                     <div className=' bg-iconBg h-12 w-12 rounded-full flex justify-center items-center align-middle'>
-                        <a href="https://www.linkedin.com/company/mandal-solutions/" target="_blank" rel="noopener noreferrer">
+                        {/* <a href="https://www.linkedin.com/company/mandal-solutions/" target="_blank" rel="noopener noreferrer">
                             <img src={Linkedin} alt="image1" className="w-8 h-8" />
-                        </a>
+                        </a> */}
                       <a href='https://www.linkedin.com/company/mandal-solutions' target='blank'>  <img src={Linkedin} alt="image1" className="w-8 h-8" /> </a>
                     </div>
                     <div className=' bg-iconBg h-12 w-12 rounded-full flex justify-center items-center align-middle'>
@@ -36,7 +36,7 @@ const Footer = () => {
                         <h5 className='title mb-4'>Solutions</h5>
                         <h6 className='subtitle mb-4'><a href="/solution/#resume-parsing"  className='sm:mb-0 cursor-pointer'>Resume Parsing</a></h6>
                         <h6 className='subtitle mb-4'><a href="/solution/#scoring"  className='sm:mb-0 cursor-pointer'>Scoring</a></h6>
-                        <h6 className='subtitle mb-4'><a href="/solution/#connect"  className='sm:mb-0 cursor-pointer'>Sourcing</a></h6>
+                        {/* <h6 className='subtitle mb-4'><a href="/solution/#connect"  className='sm:mb-0 cursor-pointer'>Sourcing</a></h6> */}
                         <h6 className='subtitle mb-4'><a href="/solution/#sourcing"  className='sm:mb-0 cursor-pointer'>Sourcing</a></h6>
                         <h6 className='subtitle mb-4'><a href="/solution/#enrichment"  className='sm:mb-0 cursor-pointer'>Enrichment</a></h6>
                     </div>
