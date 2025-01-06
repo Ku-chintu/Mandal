@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Lottie from "lottie-react";
+import listAni from '../../public/animation/candidate_animation.json';
 import ResumeUpload from "../components/ResumeUpload";
 import ApplyResumeUpload from "../components/ApplyResumeUpload";
 import service from "../service";
@@ -95,8 +97,8 @@ function Career() {
     if(min <= 0 && max <= 0) return '0-5 Years';
     else{return min + '-' + max + 'Years'};
   };
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+  // if (loading) return <div>Loading...</div>;
+  // if (error) return <div>{error}</div>;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -119,6 +121,17 @@ function Career() {
           </span>
         </h2>
         <div className="space-y-4">
+           {loading ? (
+          <>
+            <div className=" flex flex-col items-center justify-center h-[calc(100vh-12rem)] bg-white w-full ">
+              <Lottie loop animationData={listAni} />
+              <p className="-translate-y-20 font-semibold text-base">
+                Fetching candidates list
+              </p>
+            </div>
+          </>
+        ) : (
+          <>
           {jobs.map((job, index) => (
             <div
               key={index}
@@ -152,6 +165,8 @@ function Career() {
               </div>
             </div>
           ))}
+</>
+        )}
         </div>
       </div>
 
@@ -185,6 +200,17 @@ function Career() {
             </button>
           </div>
         </form>
+        {loading ? (
+          <>
+            <div className=" flex flex-col items-center justify-center h-[calc(100vh-12rem)] bg-white w-full ">
+              <Lottie loop animationData={listAni} />
+              <p className="-translate-y-20 font-semibold text-base">
+                Fetching candidates list
+              </p>
+            </div>
+          </>
+        ) : (
+          <>
         {selectedJob ? (
           <div className="bg-white p-4 rounded-lg shadow">
             {/* <h3 className="text-lg font-semibold mb-2">
@@ -294,6 +320,8 @@ function Career() {
             Select a job to view details.
           </div>
         )}
+</>
+      )}
       </div>
     </div>
   );

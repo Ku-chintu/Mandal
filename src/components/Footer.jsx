@@ -14,6 +14,7 @@ const Footer = () => {
                         <a href="https://www.linkedin.com/company/mandal-solutions/" target="_blank" rel="noopener noreferrer">
                             <img src={Linkedin} alt="image1" className="w-8 h-8" />
                         </a>
+                      <a href='https://www.linkedin.com/company/mandal-solutions' target='blank'>  <img src={Linkedin} alt="image1" className="w-8 h-8" /> </a>
                     </div>
                     <div className=' bg-iconBg h-12 w-12 rounded-full flex justify-center items-center align-middle'>
                         <img src={Facebook} alt="image1" className="w-8 h-8" />
@@ -36,6 +37,7 @@ const Footer = () => {
                         <h6 className='subtitle mb-4'><a href="/solution/#resume-parsing"  className='sm:mb-0 cursor-pointer'>Resume Parsing</a></h6>
                         <h6 className='subtitle mb-4'><a href="/solution/#scoring"  className='sm:mb-0 cursor-pointer'>Scoring</a></h6>
                         <h6 className='subtitle mb-4'><a href="/solution/#connect"  className='sm:mb-0 cursor-pointer'>Sourcing</a></h6>
+                        <h6 className='subtitle mb-4'><a href="/solution/#sourcing"  className='sm:mb-0 cursor-pointer'>Sourcing</a></h6>
                         <h6 className='subtitle mb-4'><a href="/solution/#enrichment"  className='sm:mb-0 cursor-pointer'>Enrichment</a></h6>
                     </div>
                     <div className="p-4 col-span-3 sm:col-span-2 ">

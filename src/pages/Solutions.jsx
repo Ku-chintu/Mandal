@@ -103,7 +103,7 @@ function Services() {
                 </div>
 
             </section>
-            <section id='connect' className=' xl:grid grid-cols-2 pb-20 mt-20'>
+            <section id='sourcing' className=' xl:grid grid-cols-2 pb-20 mt-20'>
                 <div className=' relative'>
                     <div className=' mb-8 mt-0 xl:mb-14 xl:mt-32'>
                         <h1 className='heading-2 font-bold'>Building stronger teams by connecting the right talent with the right opportunities.</h1>
