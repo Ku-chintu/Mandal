@@ -20,8 +20,7 @@ function Services() {
     }, []);
     return (
         <div className="w-full p-4 container m-auto">
-            <section id='resume-parsing' className=' xl:grid grid-cols-2 pb-8 xl:pb-20'>
-
+            <section id='resume-parsing' className=' xl:grid grid-cols-2'>
                 <div className='hidden xl:flex md:justify-center align-middle items-center px-4 md:px-12 lg:px-24 relative'>
                     <div className=''>
                         <img style={{ width: '100%' }} src={solutionSec1} alt="image1" className=" bg-white  pb-4 " />
@@ -50,7 +49,7 @@ function Services() {
                     <img src={sec2Group} alt="image1" className="hidden xl:block w-96 h-auto absolute -bottom-72 right-0" />
                 </div>
             </section>
-            <section id='jd-prsing' className=' xl:grid grid-cols-2 pb-20 mt-20'>
+            <section id='jd-prsing' className=' xl:grid grid-cols-2'>
                 <div className=' relative'>
                     <div className=' mb-8 mt-0 xl:mb-14 xl:mt-32'>
                         <h1 className='heading-2 font-bold'>Job Description Parsing Made Simple: Focus on What Matters.</h1>
@@ -72,7 +71,7 @@ function Services() {
                     </div>
                 </div>
             </section>
-            <section id='scoring' className=' xl:grid grid-cols-2 pb-20 mt-20'>
+            <section id='scoring' className=' xl:grid grid-cols-2'>
                 <div className='hidden xl:flex  relative  justify-center align-middle items-center sm:px-18 lg:px-28 mt-20'>
                     <div className=' '>
                         <img src={solutionSec3} alt="solutionSec1" className=" bg-white  pb-4  w-full " />
@@ -103,7 +102,7 @@ function Services() {
                 </div>
 
             </section>
-            <section id='sourcing' className=' xl:grid grid-cols-2 pb-20 mt-20'>
+            <section id='sourcing' className=' xl:grid grid-cols-2'>
                 <div className=' relative'>
                     <div className=' mb-8 mt-0 xl:mb-14 xl:mt-32'>
                         <h1 className='heading-2 font-bold'>Building stronger teams by connecting the right talent with the right opportunities.</h1>
@@ -125,7 +124,7 @@ function Services() {
                     </div>
                 </div>
             </section>
-            <section id='enrichment' className=' xl:grid grid-cols-2 pb-20 mt-20'>
+            <section id='enrichment' className=' xl:grid grid-cols-2'>
                 <div className=' relative'>
                     <div className=' mb-8 mt-0 xl:mb-14 xl:mt-32'>
                         <h1 className='heading-2 font-bold'>Enhancing every profile with enriched insights for smarter hiring decisions.</h1>

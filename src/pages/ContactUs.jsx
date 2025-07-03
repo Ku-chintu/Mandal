@@ -59,15 +59,15 @@ function ContactUs() {
       <div>
         <section className="contact-banner min-h-[450px]">
           <div className="flex justify-center items-center align-middle">
-            <div className='pt-28'>
+            <div className='pt-14'>
               <h1 className="text-white font-semibold heading-3 text-center">Contact Us</h1>
               <p className="text-white  text-xl text-center">Have Questions? We’ve Got Answers—Reach</p>
               <p className="text-white  text-xl text-center">Out Today!</p>
             </div>
           </div>
         </section>
-        <section style={{ height: '999px' }} className="relative bg-gray-100 flex items-center justify-center">
-          <div className="bg-white p-8 rounded-xl shadow w-3/4 card absolute -top-28 z-10">
+        <section style={{ height: '599px' }} className="relative bg-gray-100 flex items-center justify-center">
+          <div className="bg-white p-8 rounded-xl shadow w-3/4 card absolute -top-52 z-10">
             <h2 className="heading-3 font-semibold mb-4">Get In Touch</h2>
             <p className="text-xl mb-6">Have Questions? We’ve Got Answers—Reach Out Today!</p>
             <form onSubmit={handleSubmit}>
@@ -85,7 +85,7 @@ function ContactUs() {
                 />
               </div>
 
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <label htmlFor="companyName" className="block text-lg font-medium ">
                   Company Name
                 </label>
@@ -97,7 +97,7 @@ function ContactUs() {
                   onChange={handleChange}
                   className="mt-1 p-2 w-full border border-primary rounded-md shadow-sm hover:outline-primary outline-1"
                 />
-              </div>
+              </div> */}
 
               <div className="mb-6">
                 <label htmlFor="workEmail" className="block text-lg font-medium ">
@@ -127,7 +127,7 @@ function ContactUs() {
                 />
               </div>
 
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <label htmlFor="seniorityLevel" className="block text-lg font-medium ">
                   Seniority Level
                 </label>
@@ -144,9 +144,9 @@ function ContactUs() {
                   <option value="">Director</option>
                   <option value="">Founder</option>
                 </select>
-              </div>
+              </div> */}
 
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <label htmlFor="description" className="block text-lg font-medium ">
                   Which of the following describes
                 </label>
@@ -162,7 +162,7 @@ function ContactUs() {
                   <option value="">Hr Manager</option>
                   <option value="">Other</option>
                 </select>
-              </div>
+              </div> */}
 
               <div className="mb-6">
                 <label htmlFor="message" className="block text-lg font-medium ">

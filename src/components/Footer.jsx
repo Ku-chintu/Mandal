@@ -17,14 +17,16 @@ const Footer = () => {
                       <a href='https://www.linkedin.com/company/mandal-solutions' target='blank'>  <img src={Linkedin} alt="image1" className="w-8 h-8" /> </a>
                     </div>
                     <div className=' bg-iconBg h-12 w-12 rounded-full flex justify-center items-center align-middle'>
-                        <img src={Facebook} alt="image1" className="w-8 h-8" />
+                        {/* <img src={Facebook} alt="image1" className="w-8 h-8" /> */}
+                         <a href=' https://www.facebook.com/MandalSolutions' target='blank'>  <img src={Facebook} alt="image1" className="w-8 h-8" /> </a>
+                        
                     </div>
-                    <div className=' bg-iconBg h-12 w-12 rounded-full flex justify-center items-center align-middle'>
+                    {/* <div className=' bg-iconBg h-12 w-12 rounded-full flex justify-center items-center align-middle'>
                         <img src={Instagram} alt="image1" className="w-8 h-8" />
                     </div>
                     <div className=' bg-iconBg h-12 w-12 rounded-full flex justify-center items-center align-middle'>
                         <img src={Twitter} alt="image1" className="w-8 h-8" />
-                    </div>
+                    </div> */}
                 </div>
                 <div className=' border-t border-b border-iconBg grid grid-cols-3 md:grid-cols-7 gap-4 text-white' >
                     <div className="p-4 ">

@@ -21,8 +21,7 @@ const Header = () => {
   };
 
   const handleOutsideClick = () => {
-    console.log('Clicked outside the specific div!');
-    setPopupOpen(!isPopupOpen);
+    setPopupOpen(false);
   };
 
   useEffect(() => {

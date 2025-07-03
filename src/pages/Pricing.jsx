@@ -9,148 +9,90 @@ function Pricing() {
   return (
     <div className="w-full p-4 container m-auto mt-16">
       <section className="mb-16">
-        <div className="flex justify-center">
-          <div className="text-center w-full">
-            <h1 className="heading-3 font-semibold mb-1">Pricing Plans</h1>
-            <p className="mb-1 text-center text-xl">Choose Your Plan and Start Growing Today!</p>
-            <div className={`flex justify-center ${isMonthly ? 'mb-7' : 'mb-0' } `}>
-            <div className="flex mb-2 border border-primary rounded-full">
-              <button
-                onClick={() => setisMonthly(true)} // Wrap state update in a function
-                className={` rounded-l-full cursor-pointer w-28 text-lg font-semibold ${isMonthly ? 'bg-primary text-white' : 'bg-white text-primary'}`}
-              >
-                Monthly
-              </button>
-              <button
-                onClick={() => setisMonthly(false)} // Wrap state update in a function
-                className={` rounded-r-full cursor-pointer w-28 text-lg font-semibold ${!isMonthly ? 'bg-primary text-white' : 'bg-white text-primary'}`}
-              >
-                Yearly
-              </button>
-            </div>
-            </div>
-            {
-              !isMonthly ? <p className=' text-center text-xl'>Get dicounted price on yearly subscription</p> : null
-            }
+        <div className="text-center">
+          <h1 className="text-3xl font-bold mb-2 text-gray-800">Pricing Plans</h1>
+          <p className="text-lg text-gray-600 mb-4">Choose Your Plan and Start Growing Today!</p>
+          <div className="inline-flex mb-6 border border-primary rounded-full overflow-hidden">
+            <button
+              onClick={() => setisMonthly(true)}
+              className={`px-6 py-2 text-lg font-medium transition-colors duration-300 ${isMonthly ? 'bg-primary text-white' : 'text-primary bg-white'}`}
+            >
+              Monthly
+            </button>
+            <button
+              onClick={() => setisMonthly(false)}
+              className={`px-6 py-2 text-lg font-medium transition-colors duration-300 ${!isMonthly ? 'bg-primary text-white' : 'text-primary bg-white'}`}
+            >
+              Yearly
+            </button>
           </div>
+          {!isMonthly && (
+            <p className="text-center text-base text-green-600 font-medium">Get discounted price on yearly subscription</p>
+          )}
         </div>
-        <div className='grid md:grid-cols-2 xl:grid-cols-3'>
-          <div className='border border-gray-300 rounded-md'>
-            <div className='border-b border-gray-300 p-1 flex items-center'>
-              <div className=' text-black font-semibold text-xl'>Basic Plan</div>
-              <div className='ml-4 flex gap-1 items-center rounded-full px-4 font-semibold text-base border border-sky-400 '>
-                <div style={{minWidth: '6px', minHeight: '6px', maxHeight: '6px', maxWidth: '6px'}} className=' bg-success rounded-full'></div>
-                <div className=' text-base font-semibold'>Active</div>
+
+        {/* Added max-w-6xl and mx-auto for centering and width control */}
+        <div className="grid gap-4 mt-10 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          {[
+            {
+              title: 'Basic Plan',
+              features: ['Resume Parser', 'Job Parser', 'Sourcing'],
+              missing: ['Scoring', 'Enrichment', 'Talent on Demand'],
+              status: 'Active',
+            },
+            {
+              title: 'Premium Plan',
+              features: ['Resume Parser', 'Job Parser', 'Sourcing', 'Scoring'],
+              missing: ['Enrichment', 'Talent on Demand'],
+            },
+            {
+              title: 'Enterprise Plan',
+              features: [
+                'All in Premium Plan',
+                'ATS integration',
+                'SSO',
+                'Career site',
+                'Job publish',
+                'Custom development',
+              ],
+              missing: [],
+            },
+          ].map((plan, i) => (
+            <div key={i} className={`border border-gray-300 rounded-xl shadow-sm hover:shadow-lg transition duration-300 `}>
+              <div className="border-b border-gray-200 p-4 flex justify-between items-center bg-gray-50 rounded-t-xl">
+                <h2 className="text-xl font-semibold text-gray-800">{plan.title}</h2>
+                {plan.status && (
+                  <span className="text-sm font-medium text-green-700 bg-green-100 px-3 py-1 rounded-full">Active</span>
+                )}
+              </div>
+              <div className="p-5">
+                <p className="mb-3 text-base font-semibold text-gray-700">Features</p>
+                {plan.features.map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-3 mb-2">
+                    <img src={CheckMark} alt="Check" className="w-5 h-5" />
+                    <span className="text-gray-700 text-base">{feature}</span>
+                  </div>
+                ))}
+                {plan.missing.map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-3 mb-2">
+                    <img src={Cancel} alt="Cancel" className="w-5 h-5" />
+                    <span className="text-gray-400 text-base">{feature}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="px-5 pb-5">
+                <a href="/contactus">
+                  <button className="w-full bg-primary text-white font-semibold py-2.5 rounded-md text-lg hover:bg-primary/90 transition">
+                    Contact Us
+                  </button>
+                </a>
               </div>
             </div>
-            <div className='p-4 border-b border-gray-300'>
-              <p className='mb-2 text-base font-semibold'>Features</p>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Resume Parser</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Job Parser</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Sourcing</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={Cancel} alt="Cancel" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Scoring</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={Cancel} alt="Cancel" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Enrichment</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={Cancel} alt="Cancel" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Talent on Demand</p>
-              </div>
-            </div>
-            <div className='p-4'>
-            <a href="/contactus"  className='sm:mb-0 cursor-pointer'>
-              <button className='text-white font-semibold text-xl bg-primary py-2 rounded-md w-full '>Contact Us</button>
-              </a>
-            </div>
-          </div>
-          <div className='border border-gray-300 rounded-md'>
-            <div className='border-b border-gray-300 p-1 flex items-center'>
-              <div className=' text-black font-semibold text-xl'>Premium Plan</div>
-            </div>
-            <div className='p-4 border-b border-gray-300'>
-              <p className='mb-2 text-base font-semibold'>Features</p>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Resume Parser</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Job Parser</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Sourcing</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Scoring</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={Cancel} alt="Cancel" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Enrichment</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={Cancel} alt="Cancel" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Talent on Demand</p>
-              </div>
-            </div>
-            <div className='p-4'>
-            <a href="/contactus"  className='sm:mb-0 cursor-pointer'>
-              <button className='text-white font-semibold text-xl bg-primary py-2 rounded-md w-full '>Contact Us</button></a>
-            </div>
-          </div>
-          <div className='border border-gray-300 rounded-md'>
-            <div className='border-b border-gray-300 p-1 flex items-center'>
-              <div className=' text-black font-semibold text-xl'>Enterprise Plan</div>
-            </div>
-            <div className='p-4 border-b border-gray-300'>
-              <p className='mb-2 text-base font-semibold'>Features</p>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>All in Premium Plan</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>ATS integration</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>SSO</p>
-              </div>
-              <div className='flex items-center gap-4 mb-4'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Career site</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Job publish</p>
-              </div>
-              <div className='flex items-center gap-4 mb-2'>
-                <img src={CheckMark} alt="CheckMark" className="rounded-icon" />
-                <p className=' font-medium text-lg'>Custom development</p>
-              </div>
-            </div>
-            <div className='p-4'>
-            <a href="/contactus"  className='sm:mb-0 cursor-pointer'>
-              <button className='text-white font-semibold text-xl bg-primary py-2 rounded-md w-full '>Contact Us</button></a>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
     </div>
+
   );
 }
 
