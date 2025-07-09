@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SubscribeForUpdate from '../components/SubscribeForUpdates';
-import Linkedin from '../assets/svg/Linkedin 2.svg';
+import Linkedin from '../assets/svg/LinkedIn 2.svg';
 import Facebook from '../assets/svg/Facebook F.svg';
 import Instagram from '../assets/svg/Instagram.svg';
 import Twitter from '../assets/svg/Twitter.svg';
