@@ -1,0 +1,124 @@
+pipeline {
+    agent any
+
+    environment {
+        BUILD_DIR = 'dist'
+        DEPLOY_DIR = '/var/www/mandal'
+        NGINX_CONF = '/etc/nginx/sites-available/mandal'
+        NGINX_LINK = '/etc/nginx/sites-enabled/mandal'
+        SSH_KEY_PATH = '/var/lib/jenkins/new-key.pem'
+        PRIVATE_HOST = '10.0.3.59'
+        PRIVATE_USER = 'ubuntu'
+        REMOTE_TMP_DIR = '/tmp/mandal-dist'
+    }
+
+    options {
+        skipDefaultCheckout(true)
+        timestamps()
+    }
+
+    stages {
+
+        stage('Clean Workspace') {
+            steps {
+                deleteDir()
+            }
+        }
+
+        stage('Clone Repository') {
+            steps {
+                git branch: 'dev', url: 'https://github.com/Ku-chintu/Mandal.git'
+            }
+        }
+
+        stage('Install Node.js v20') {
+            steps {
+                sh '''
+                    set -e
+                    if ! command -v node >/dev/null || [ "$(node -v | sed 's/v//; s/\\..*//')" -lt 20 ]; then
+                        echo "Installing Node.js v20..."
+                        curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+                        sudo apt-get install -y nodejs
+                    else
+                        echo "Node.js is already installed: $(node -v)"
+                    fi
+                '''
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+
+        stage('Build Project') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+
+        stage('Copy Files to Private Server') {
+            steps {
+                sh '''
+                    echo "📤 Uploading build files to private EC2..."
+                    ssh -o StrictHostKeyChecking=no -i "$SSH_KEY_PATH" $PRIVATE_USER@$PRIVATE_HOST "mkdir -p $REMOTE_TMP_DIR"
+                    rsync -avz -e "ssh -o StrictHostKeyChecking=no -i $SSH_KEY_PATH" "$BUILD_DIR"/ $PRIVATE_USER@$PRIVATE_HOST:$REMOTE_TMP_DIR/
+                '''
+            }
+        }
+
+        stage('Deploy on Private Server') {
+            steps {
+                sh """
+                    echo "🚀 Deploying to remote Nginx server..."
+                    ssh -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no $PRIVATE_USER@$PRIVATE_HOST 'bash -s' <<'ENDSSH'
+                        set -e
+
+                        echo "📁 Preparing deployment directory..."
+                        sudo mkdir -p "$DEPLOY_DIR"
+                        sudo rsync -a --delete "$REMOTE_TMP_DIR"/ "$DEPLOY_DIR"/
+
+                        echo "🛠️ Ensuring Nginx is installed..."
+                        if ! command -v nginx >/dev/null; then
+                            sudo apt-get update -y
+                            sudo apt-get install -y nginx
+                        fi
+
+                        echo "⚙️ Setting up Nginx config..."
+                        sudo rm -f /etc/nginx/sites-enabled/default || true
+                        sudo rm -f /etc/nginx/sites-available/default || true
+
+                        # Inject nginx config
+                        sudo tee "$NGINX_CONF" > /dev/null <<EOF
+server {
+    listen 80;
+    server_name _;
+    root $DEPLOY_DIR;
+    index index.html;
+
+    location / {
+        try_files \$uri \$uri/ /index.html;
+    }
+}
+EOF
+
+                        sudo ln -sf "$NGINX_CONF" "$NGINX_LINK"
+                        sudo nginx -t
+                        sudo systemctl reload nginx
+                        echo "✅ Deployment complete on remote server."
+ENDSSH
+                """
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Deployment successful!'
+        }
+        failure {
+            echo '❌ Pipeline failed.'
+        }
+    }
+}
