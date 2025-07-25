@@ -95,7 +95,7 @@ server {
     listen 80;
     server_name _;
 
-    root \$DEPLOY_DIR;
+    root ${DEPLOY_DIR};
     index index.html;
 
     location / {
@@ -108,6 +108,7 @@ server {
     }
 }
 EOF
+
 
                         sudo ln -sf "$NGINX_CONF" "$NGINX_LINK"
                         sudo nginx -t || { echo '❌ Nginx config test failed'; exit 1; }
