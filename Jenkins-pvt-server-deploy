@@ -110,6 +110,7 @@ server {
 EOF
 
 
+
                         sudo ln -sf "$NGINX_CONF" "$NGINX_LINK"
                         sudo nginx -t || { echo '❌ Nginx config test failed'; exit 1; }
                         sudo systemctl reload nginx
