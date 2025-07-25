@@ -62,6 +62,7 @@ pipeline {
             steps {
                 sh '''
                     echo "📤 Uploading build files to private EC2..."
+                    chmod 600 "$SSH_KEY_PATH"
                     ssh -o StrictHostKeyChecking=no -i "$SSH_KEY_PATH" $PRIVATE_USER@$PRIVATE_HOST "mkdir -p $REMOTE_TMP_DIR"
                     rsync -avz -e "ssh -o StrictHostKeyChecking=no -i $SSH_KEY_PATH" "$BUILD_DIR"/ $PRIVATE_USER@$PRIVATE_HOST:$REMOTE_TMP_DIR/
                 '''
@@ -89,17 +90,16 @@ pipeline {
                         sudo rm -f /etc/nginx/sites-enabled/default || true
                         sudo rm -f /etc/nginx/sites-available/default || true
 
-                        # Inject nginx config
                         sudo tee "$NGINX_CONF" > /dev/null <<EOF
 server {
     listen 80;
     server_name _;
 
-    root $DEPLOY_DIR;
+    root \$DEPLOY_DIR;
     index index.html;
 
     location / {
-        try_files \\uri \\$uri/ /index.html;
+        try_files \$uri \$uri/ /index.html;
     }
 
     error_page 500 502 503 504 /50x.html;
@@ -107,13 +107,15 @@ server {
         root /usr/share/nginx/html;
     }
 }
-
 EOF
 
                         sudo ln -sf "$NGINX_CONF" "$NGINX_LINK"
-                        sudo nginx -t
+                        sudo nginx -t || { echo '❌ Nginx config test failed'; exit 1; }
                         sudo systemctl reload nginx
                         echo "✅ Deployment complete on remote server."
+
+                        echo "🧹 Cleaning up..."
+                        sudo rm -rf "$REMOTE_TMP_DIR"
 ENDSSH
                 """
             }
