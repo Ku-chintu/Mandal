@@ -4,7 +4,7 @@ pipeline {
     environment {
         BUILD_DIR = 'dist'
         SSH_KEY_PATH = '/var/lib/jenkins/web-key.pem'
-        PRIVATE_HOST = '10.0.2.114'
+        PRIVATE_HOST = '10.0.2.77'
         PRIVATE_USER = 'ubuntu'
     }
 
