@@ -66,7 +66,7 @@ pipeline {
 
         stage('Deploy on Private Server') {
             steps {
-                sh """
+                sh '''
                     echo "🚀 Deploying to remote Nginx server..."
                     ssh -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no $PRIVATE_USER@$PRIVATE_HOST 'bash -s' <<'ENDSSH'
                         set -e
@@ -95,11 +95,11 @@ server {
     listen 80;
     server_name _;
 
-    root \$DEPLOY_DIR;
+    root $DEPLOY_DIR;
     index index.html;
 
     location / {
-        try_files \$uri \$uri/ /index.html;
+        try_files $uri $uri/ /index.html;
     }
 
     error_page 500 502 503 504 /50x.html;
@@ -114,7 +114,7 @@ EOF
                         sudo systemctl reload nginx
                         echo "✅ Deployment complete on remote server."
 ENDSSH
-                """
+                '''
             }
         }
     }
