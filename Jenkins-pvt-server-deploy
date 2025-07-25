@@ -3,11 +3,11 @@ pipeline {
 
     environment {
         BUILD_DIR = 'dist'
-        DEPLOY_DIR = '/var/www/mandal'
+        DEPLOY_DIR = '/var/www/mandal/build'
         NGINX_CONF = '/etc/nginx/sites-available/mandal'
         NGINX_LINK = '/etc/nginx/sites-enabled/mandal'
-        SSH_KEY_PATH = '/var/lib/jenkins/new-key.pem'
-        PRIVATE_HOST = '10.0.2.62'
+        SSH_KEY_PATH = '/var/lib/jenkins/web-key.pem'
+        PRIVATE_HOST = '10.0.2.212'
         PRIVATE_USER = 'ubuntu'
         REMOTE_TMP_DIR = '/tmp/mandal-dist'
     }
@@ -95,7 +95,7 @@ server {
     listen 80;
     server_name _;
 
-    root /var/www/mandal;
+    root $DEPLOY_DIR;
     index index.html;
 
     location / {
