@@ -7,7 +7,7 @@ pipeline {
         NGINX_CONF = '/etc/nginx/sites-available/mandal'
         NGINX_LINK = '/etc/nginx/sites-enabled/mandal'
         SSH_KEY_PATH = '/var/lib/jenkins/new-key.pem'
-        PRIVATE_HOST = '10.0.3.59'
+        PRIVATE_HOST = '10.0.2.62'
         PRIVATE_USER = 'ubuntu'
         REMOTE_TMP_DIR = '/tmp/mandal-dist'
     }
@@ -94,13 +94,20 @@ pipeline {
 server {
     listen 80;
     server_name _;
-    root $DEPLOY_DIR;
+
+    root /var/www/mandal;
     index index.html;
 
     location / {
-        try_files \$uri \$uri/ /index.html;
+        try_files $uri $uri/ /index.html;
+    }
+
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        root /usr/share/nginx/html;
     }
 }
+
 EOF
 
                         sudo ln -sf "$NGINX_CONF" "$NGINX_LINK"
