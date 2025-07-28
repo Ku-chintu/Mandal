@@ -69,28 +69,28 @@ pipeline {
             }
         }
 
-       stage('Deploy on Private Server') {
-    steps {
-        sh """
-            echo "🚀 Deploying to remote Nginx server..."
-            ssh -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no $PRIVATE_USER@$PRIVATE_HOST 'bash -s' <<'ENDSSH'
-                set -e
+        stage('Deploy on Private Server') {
+            steps {
+                sh """
+                    echo "🚀 Deploying to remote Nginx server..."
+                    ssh -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no $PRIVATE_USER@$PRIVATE_HOST 'bash -s' <<'ENDSSH'
+                        set -e
 
-                echo "📁 Preparing deployment directory..."
-                sudo mkdir -p "$DEPLOY_DIR"
-                sudo rsync -a --delete "$REMOTE_TMP_DIR"/ "$DEPLOY_DIR"/
+                        echo "📁 Preparing deployment directory..."
+                        sudo mkdir -p "$DEPLOY_DIR"
+                        sudo rsync -a --delete "$REMOTE_TMP_DIR"/ "$DEPLOY_DIR"/
 
-                echo "🛠️ Ensuring Nginx is installed..."
-                if ! command -v nginx >/dev/null; then
-                    sudo apt-get update -y
-                    sudo apt-get install -y nginx
-                fi
+                        echo "🛠️ Ensuring Nginx is installed..."
+                        if ! command -v nginx >/dev/null; then
+                            sudo apt-get update -y
+                            sudo apt-get install -y nginx
+                        fi
 
-                echo "⚙️ Setting up Nginx config..."
-                sudo rm -f /etc/nginx/sites-enabled/default || true
-                sudo rm -f /etc/nginx/sites-available/default || true
+                        echo "⚙️ Setting up Nginx config..."
+                        sudo rm -f /etc/nginx/sites-enabled/default || true
+                        sudo rm -f /etc/nginx/sites-available/default || true
 
-                sudo tee "$NGINX_CONF" > /dev/null <<EOF
+                        sudo tee "$NGINX_CONF" > /dev/null <<EOF
 server {
     listen 80;
     server_name _;
@@ -109,18 +109,18 @@ server {
 }
 EOF
 
-                sudo ln -sf "$NGINX_CONF" "$NGINX_LINK"
-                sudo nginx -t || { echo '❌ Nginx config test failed'; exit 1; }
-                sudo systemctl reload nginx
-                echo "✅ Deployment complete on remote server."
+                        sudo ln -sf "$NGINX_CONF" "$NGINX_LINK"
+                        sudo nginx -t || { echo '❌ Nginx config test failed'; exit 1; }
+                        sudo systemctl reload nginx
+                        echo "✅ Deployment complete on remote server."
 
-                echo "🧹 Cleaning up..."
-                sudo rm -rf "$REMOTE_TMP_DIR"
+                        echo "🧹 Cleaning up..."
+                        sudo rm -rf "$REMOTE_TMP_DIR"
 ENDSSH
-        """
+                """
+            }
+        }
     }
-}
-
 
     post {
         success {
