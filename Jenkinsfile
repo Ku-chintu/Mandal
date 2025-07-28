@@ -3,9 +3,13 @@ pipeline {
 
     environment {
         BUILD_DIR = 'dist'
-        DEPLOY_DIR = '/var/www/mandal'
+        DEPLOY_DIR = '/var/www/mandal/build'
         NGINX_CONF = '/etc/nginx/sites-available/mandal'
         NGINX_LINK = '/etc/nginx/sites-enabled/mandal'
+        SSH_KEY_PATH = '/var/lib/jenkins/web-key.pem'
+        PRIVATE_HOST = '10.0.2.24'
+        PRIVATE_USER = 'ubuntu'
+        REMOTE_TMP_DIR = '/tmp/mandal-dist'
     }
 
     options {
@@ -14,6 +18,7 @@ pipeline {
     }
 
     stages {
+
         stage('Clean Workspace') {
             steps {
                 deleteDir()
@@ -31,11 +36,11 @@ pipeline {
                 sh '''
                     set -e
                     if ! command -v node >/dev/null || [ "$(node -v | sed 's/v//; s/\\..*//')" -lt 20 ]; then
-                      echo "Installing Node.js v20..."
-                      curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-                      sudo apt-get install -y nodejs
+                        echo "Installing Node.js v20..."
+                        curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+                        sudo apt-get install -y nodejs
                     else
-                      echo "Node.js is already at $(node -v)"
+                        echo "Node.js is already installed: $(node -v)"
                     fi
                 '''
             }
@@ -43,7 +48,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                sh 'npm ci'
             }
         }
 
@@ -53,66 +58,81 @@ pipeline {
             }
         }
 
-        stage('Ensure Nginx') {
+        stage('Copy Files to Private Server') {
             steps {
                 sh '''
-                    set -e
-                    if ! command -v nginx >/dev/null; then
-                      echo "Installing Nginx..."
-                      sudo apt-get update -y
-                      sudo apt-get install -y nginx
-                    else
-                      echo "Nginx already installed."
-                    fi
-
-                    sudo rm -f /etc/nginx/sites-enabled/default
-                    sudo rm -f /etc/nginx/sites-available/default
-                    sudo systemctl enable nginx || true
-                    sudo systemctl start nginx || true
+                    echo "📤 Uploading build files to private EC2..."
+                    chmod 600 "$SSH_KEY_PATH"
+                    ssh -o StrictHostKeyChecking=no -i "$SSH_KEY_PATH" $PRIVATE_USER@$PRIVATE_HOST "mkdir -p $REMOTE_TMP_DIR"
+                    rsync -avz -e "ssh -o StrictHostKeyChecking=no -i $SSH_KEY_PATH" "$BUILD_DIR"/ $PRIVATE_USER@$PRIVATE_HOST:$REMOTE_TMP_DIR/
                 '''
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy on Private Server') {
             steps {
-                sh '''
-                    set -e
-                    sudo mkdir -p "$DEPLOY_DIR"
+                sh """
+                    echo "🚀 Deploying to remote Nginx server..."
+                    ssh -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no $PRIVATE_USER@$PRIVATE_HOST 'bash -s' <<'ENDSSH'
+                        set -e
 
-                    # Copy build files
-                    if command -v rsync >/dev/null; then
-                      sudo rsync -a --delete "$BUILD_DIR"/ "$DEPLOY_DIR"/
-                    else
-                      sudo rm -rf "$DEPLOY_DIR"/* || true
-                      sudo cp -r "$BUILD_DIR"/* "$DEPLOY_DIR"/
-                    fi
+                        DEPLOY_DIR="$DEPLOY_DIR"
+                        NGINX_CONF="$NGINX_CONF"
+                        NGINX_LINK="$NGINX_LINK"
+                        TRY_FILES="\\\$uri \\\$uri/ /index.html"
 
-                    # Create Nginx config
-                    sudo tee "$NGINX_CONF" > /dev/null <<'NGINXCONF'
+                        echo "📁 Preparing deployment directory..."
+                        sudo mkdir -p "$DEPLOY_DIR"
+                        sudo rsync -a --delete "$REMOTE_TMP_DIR"/ "$DEPLOY_DIR"/
+
+                        echo "🛠️ Ensuring Nginx is installed..."
+                        if ! command -v nginx >/dev/null; then
+                            sudo apt-get update -y
+                            sudo apt-get install -y nginx
+                        fi
+
+                        echo "⚙️ Setting up Nginx config..."
+                        sudo rm -f /etc/nginx/sites-enabled/default || true
+                        sudo rm -f /etc/nginx/sites-available/default || true
+
+                        sudo tee "$NGINX_CONF" > /dev/null <<EONGINX
 server {
     listen 80;
     server_name _;
-    root __DEPLOY_DIR__;
+
+    root \$DEPLOY_DIR;
     index index.html;
 
     location / {
-        try_files $uri $uri/ /index.html;
+        try_files \$TRY_FILES;
+    }
+
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        root /usr/share/nginx/html;
     }
 }
-NGINXCONF
+EONGINX
 
-                    sudo sed -i "s|__DEPLOY_DIR__|$DEPLOY_DIR|g" "$NGINX_CONF"
+                        sudo ln -sf "$NGINX_CONF" "$NGINX_LINK"
+                        sudo nginx -t || { echo '❌ Nginx config test failed'; exit 1; }
+                        sudo systemctl reload nginx
+                        echo "✅ Deployment complete on remote server."
 
-                    sudo ln -sf "$NGINX_CONF" "$NGINX_LINK"
-                    sudo nginx -t
-                    sudo systemctl reload nginx
-                '''
+                        echo "🧹 Cleaning up..."
+                        sudo rm -rf "$REMOTE_TMP_DIR"
+ENDSSH
+                """
             }
         }
     }
 
     post {
-        failure { echo "❌ Pipeline failed." }
-        success { echo "✅ Deployment successful!" }
+        success {
+            echo '✅ Deployment successful!'
+        }
+        failure {
+            echo '❌ Pipeline failed.'
+        }
     }
 }
