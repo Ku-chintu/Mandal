@@ -18,6 +18,7 @@ pipeline {
     }
 
     stages {
+
         stage('Clean Workspace') {
             steps {
                 deleteDir()
@@ -76,11 +77,6 @@ pipeline {
                         set -e
 
                         echo "📁 Preparing deployment directory..."
-                        DEPLOY_DIR="${DEPLOY_DIR}"
-                        REMOTE_TMP_DIR="${REMOTE_TMP_DIR}"
-                        NGINX_CONF="${NGINX_CONF}"
-                        NGINX_LINK="${NGINX_LINK}"
-
                         sudo mkdir -p "$DEPLOY_DIR"
                         sudo rsync -a --delete "$REMOTE_TMP_DIR"/ "$DEPLOY_DIR"/
 
@@ -113,7 +109,7 @@ server {
 }
 EOF
 
-                        sudo ln -sf "\$NGINX_CONF" "\$NGINX_LINK"
+                        sudo ln -sf "$NGINX_CONF" "$NGINX_LINK"
                         sudo nginx -t || { echo '❌ Nginx config test failed'; exit 1; }
                         sudo systemctl reload nginx
                         echo "✅ Deployment complete on remote server."
